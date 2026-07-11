@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://wahid-firnas.netlify.app/sitemap.xml
