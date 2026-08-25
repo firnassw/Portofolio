@@ -48,7 +48,7 @@ export const projectsItems: ProjectDetail[] = [
     techStack: ["Figma", "UI/UX Design", "Product Strategy", "Business Model Canvas", "Prototyping"],
     challenge: "Mahasiswa kesulitan membuktikan skill ke dunia kerja karena portofolio tidak terstruktur dan tidak ada standarisasi penilaian.",
     solution: "Membuat platform yang menilai portofolio dengan AI, memberi feedback dan progress tier agar mahasiswa lebih siap dan kompetitif di dunia kerja.",
-    prototypeUrl: "#"
+    prototypeUrl: "https://www.figma.com/proto/yhb9UYTVKM4aS32BGzu15W/SkillAttribute-Mahasiswa?node-id=1-176&p=f&t=Wx7avajhT9ujUsc8-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A176&show-proto-sidebar=1"
   },
   {
     id: "proj-2",
@@ -57,7 +57,8 @@ export const projectsItems: ProjectDetail[] = [
     summary: "Platform manajemen kesehatan dan keuangan mahasiswa. Pantau stamina, catat pengeluaran, dan terhubung real-time.",
     description: "Platform manajemen kesehatan dan keuangan mahasiswa yang dirancang khusus untuk mempermudah kehidupan di kos.",
     url: "#",
-    image: "/projek/kostcare.png",
+    image: "/projek/kostcare-detail.jpg",
+    thumbnailImage: "/projek/kostcare.png",
     metadata: {
       period: "Agu 2023 - Okt 2023",
       role: "Fullstack Developer",
@@ -75,7 +76,7 @@ export const projectsItems: ProjectDetail[] = [
     techStack: ["HTML5", "CSS3", "JavaScript", "PHP Native", "MySQL", "Bootstrap 5", "Chart.js"],
     challenge: "Banyak mahasiswa yang kesulitan mengelola keuangan dan sering mengabaikan kesehatan mereka saat tinggal di kos.",
     solution: "Menghadirkan aplikasi all-in-one yang mudah digunakan untuk tracking pengeluaran sekaligus memiliki fitur pemantauan kesehatan dasar.",
-    prototypeUrl: "#"
+    prototypeUrl: "https://github.com/firnassw/KostCare"
   },
   {
     id: "proj-3",
@@ -84,7 +85,8 @@ export const projectsItems: ProjectDetail[] = [
     summary: "Sistem informasi laboratorium berbasis web (PHP/MySQL) untuk mengelola data pasien, antrean, rekam medis.",
     description: "Aplikasi manajemen rekam medis dan data inventori pada laboratorium klinik berbasis mobile dan website.",
     url: "#",
-    image: "/projek/medikalab.png",
+    image: "/projek/medikalab-detail.png",
+    thumbnailImage: "/projek/medikalab.png",
     metadata: {
       period: "Jan 2024 - Mar 2024",
       role: "Backend Engineer",
@@ -102,6 +104,6 @@ export const projectsItems: ProjectDetail[] = [
     techStack: ["HTML5", "CSS3", "PHP Native", "MySQL", "SQL", "Google Fonts", "Font Awesome", "XAMPP"],
     challenge: "Pencatatan rekam medis dan pengelolaan stok bahan kimia di laboratorium masih banyak yang dilakukan secara manual sehingga rawan kesalahan dan lambat.",
     solution: "Mendigitalisasi seluruh proses operasional laboratorium dengan sistem web responsif yang aman dan mudah dioperasikan oleh tenaga medis.",
-    prototypeUrl: "#"
+    prototypeUrl: "https://github.com/firnassw/MedikaLab"
   }
 ];

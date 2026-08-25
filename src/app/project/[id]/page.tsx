@@ -101,16 +101,12 @@ export default async function ProjectDetail({ params }: { params: Promise<{ id: 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-8">
               {/* Tech Stack Card */}
               <div className="bg-white dark:bg-[#18181B] rounded-[24px] p-7 shadow-[0_2px_10px_rgb(0,0,0,0.04)] border border-gray-100 dark:border-gray-800 flex flex-col justify-start sm:row-span-2 h-full">
-                <h3 className="text-[16px] font-bold mb-4" style={{ color: 'var(--color-on-surface)' }}>Tech Stack</h3>
-                <div className="flex flex-wrap gap-2.5">
+                <h3 className="text-[16px] font-bold" style={{ color: 'var(--color-on-surface)', marginBottom: '24px' }}>Tech Stack</h3>
+                <div className="flex flex-wrap gap-3.5">
                   {project.techStack.map((tech, i) => (
                     <span 
                       key={i} 
-                      className="px-4 py-2 text-[13px] font-medium border rounded-full bg-gray-50 dark:bg-[#27272A]"
-                      style={{ 
-                        borderColor: 'var(--color-outline)', 
-                        color: 'var(--color-on-surface-variant)'
-                      }}
+                      className="px-4 py-2 text-[13px] font-semibold rounded-full bg-indigo-50 text-indigo-600 border border-indigo-100/50 shadow-[0_2px_8px_rgba(79,70,229,0.06)] dark:bg-indigo-500/10 dark:text-indigo-300 dark:border-indigo-500/20 hover:bg-indigo-100 hover:border-indigo-200 dark:hover:bg-indigo-500/20 dark:hover:border-indigo-500/30 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(79,70,229,0.15)] cursor-default flex items-center justify-center"
                     >
                       {tech}
                     </span>
