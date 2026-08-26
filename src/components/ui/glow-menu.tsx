@@ -68,7 +68,7 @@ export const MenuBar = React.forwardRef<HTMLDivElement, MenuBarProps>(
       <motion.nav
         ref={ref}
         className={cn(
-          "p-2 rounded-full bg-gradient-to-b from-background/80 to-background/40 backdrop-blur-lg border border-border/40 shadow-lg relative overflow-hidden",
+          "p-2 rounded-full bg-gradient-to-b from-background/80 to-background/40 backdrop-blur-lg border border-border/40 shadow-lg relative overflow-hidden max-w-full",
           className,
         )}
         initial="initial"
@@ -83,7 +83,7 @@ export const MenuBar = React.forwardRef<HTMLDivElement, MenuBarProps>(
           } to-transparent rounded-full z-0 pointer-events-none`}
           variants={navGlowVariants}
         />
-        <ul className="flex items-center gap-2 relative z-10">
+        <ul className="flex items-center gap-2 relative z-10 overflow-x-auto pb-1 -mb-1 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           {items.map((item) => {
             const Icon = item.icon
             const isActive = item.label === activeItem

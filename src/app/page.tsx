@@ -1051,7 +1051,7 @@ export default function Home() {
         </div>
 
         {/* TAB NAVIGATION */}
-        <div className="tab-nav-container flex justify-center mb-8" data-reveal>
+        <div className="tab-nav-container w-full max-w-full flex justify-center mb-8 px-2" data-reveal>
           <MenuBar
             items={glowMenuItems}
             activeItem={activeTab}
