@@ -2,11 +2,11 @@
 
 import { motion } from "framer-motion"
 import { Plus, LucideIcon } from "lucide-react"
-import { useState } from "react"
+import React, { useState } from "react"
 import { cn } from "@/lib/utils"
 
 interface SocialIcon {
-  Icon: LucideIcon
+  Icon: React.ElementType<any>
   href?: string
   className?: string
 }

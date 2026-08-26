@@ -4,6 +4,11 @@ import { notFound } from 'next/navigation';
 import { ArrowLeft, Calendar, User, PenTool, CheckCircle2, Diamond, ExternalLink } from 'lucide-react';
 import { projectsItems } from '@/data/projects';
 
+export async function generateStaticParams() {
+  return projectsItems.map((project) => ({
+    id: project.id,
+  }));
+}
 export default async function ProjectDetail({ params }: { params: Promise<{ id: string }> }) {
   const resolvedParams = await params;
   const project = projectsItems.find((p) => p.id === resolvedParams.id);
