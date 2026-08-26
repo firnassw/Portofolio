@@ -185,22 +185,26 @@ const Gallery6 = ({
       {/* Fullscreen Image Modal */}
       {selectedImage && (
         <div 
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm transition-opacity"
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/85 p-6 md:p-12 backdrop-blur-sm transition-opacity"
           onClick={() => setSelectedImage(null)}
         >
+          {/* Close button fixed to top right of the screen */}
           <button 
-            className="absolute top-4 right-4 md:top-6 md:right-6 text-white hover:text-gray-300 transition-colors p-2 bg-black/50 rounded-full"
+            className="absolute top-4 right-4 md:top-6 md:right-6 text-white bg-gray-900/60 hover:bg-black border border-white/20 backdrop-blur-md transition-all p-3 rounded-full shadow-2xl z-[110] flex items-center justify-center"
             onClick={() => setSelectedImage(null)}
             aria-label="Close modal"
           >
-            <X className="w-6 h-6 md:w-8 md:h-8" />
+            <X className="w-5 h-5 md:w-6 md:h-6" />
           </button>
-          <img 
-            src={selectedImage} 
-            alt="Certificate Preview" 
-            className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
-            onClick={(e) => e.stopPropagation()}
-          />
+          
+          {/* Inner container to constrain image */}
+          <div className="relative w-full h-full max-w-6xl flex items-center justify-center" onClick={(e) => e.stopPropagation()}>
+            <img 
+              src={selectedImage} 
+              alt="Certificate Preview" 
+              className="max-w-full max-h-full object-contain rounded-xl shadow-[0_0_40px_rgba(0,0,0,0.5)] border border-white/10"
+            />
+          </div>
         </div>
       )}
     </section>

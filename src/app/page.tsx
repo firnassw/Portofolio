@@ -1,9 +1,12 @@
 
 "use client";
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Gallery6 } from "@/components/blocks/gallery6";
+import { MenuBar } from "@/components/ui/glow-menu";
+import { AnimatedSocialIcons } from "@/components/ui/floating-action-button";
+import { Code, Award, Trophy, Mail } from "lucide-react";
 import { projectsItems } from "@/data/projects";
 
 
@@ -167,7 +170,65 @@ const lombaItems = [
   }
 ];
 
+const glowMenuItems = [
+  {
+    icon: Code,
+    label: "Projects",
+    gradient: "radial-gradient(circle, rgba(59,130,246,0.15) 0%, rgba(37,99,235,0.06) 50%, rgba(29,78,216,0) 100%)",
+    iconColor: "text-blue-500",
+  },
+  {
+    icon: Award,
+    label: "Certificates",
+    gradient: "radial-gradient(circle, rgba(249,115,22,0.15) 0%, rgba(234,88,12,0.06) 50%, rgba(194,65,12,0) 100%)",
+    iconColor: "text-orange-500",
+  },
+  {
+    icon: Trophy,
+    label: "Lomba",
+    gradient: "radial-gradient(circle, rgba(34,197,94,0.15) 0%, rgba(22,163,74,0.06) 50%, rgba(21,128,61,0) 100%)",
+    iconColor: "text-green-500",
+  }
+];
+
+const GithubIcon = (props: any) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.02c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A4.8 4.8 0 0 0 9 18v4"></path>
+  </svg>
+);
+
+const LinkedinIcon = (props: any) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+    <rect x="2" y="9" width="4" height="12"></rect>
+    <circle cx="4" cy="4" r="2"></circle>
+  </svg>
+);
+
+const InstagramIcon = (props: any) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+  </svg>
+);
+
+const aboutSocialIcons = [
+  { Icon: GithubIcon, href: "https://github.com/firnassw" },
+  { Icon: LinkedinIcon, href: "https://www.linkedin.com/in/wahid-firnas/" },
+  { Icon: Mail, href: "mailto:wahidfirnas7@gmail.com" },
+  { Icon: InstagramIcon, href: "https://instagram.com/f.rnass" }
+];
+
 export default function Home() {
+    const [activeTab, setActiveTab] = useState<string>("Projects");
+
+    useEffect(() => {
+      // Re-initialize Embla Carousel dimensions after layout update when activeTab changes
+      setTimeout(() => {
+        window.dispatchEvent(new Event('resize'));
+      }, 50);
+    }, [activeTab]);
 
     useEffect(() => {
     // Ensure page-loaded is always added so the hero section becomes visible
@@ -506,33 +567,7 @@ export default function Home() {
     };
     window.addEventListener('keydown', modalKeydownListener);
 
-    /* Portfolio Showcase Tabs */
-    const tabBtns = document.querySelectorAll('.tab-btn');
-    const tabContents = document.querySelectorAll('.tab-content');
-
-    tabBtns.forEach(btn => {
-      (btn as HTMLElement).onclick = () => {
-        // Remove active class from all buttons
-        tabBtns.forEach(b => b.classList.remove('active'));
-        // Hide all contents
-        tabContents.forEach(c => c.classList.remove('active'));
-
-        // Add active class to clicked button
-        btn.classList.add('active');
-        // Show target content
-        const targetId = btn.getAttribute('data-tab');
-        if (targetId) {
-          const targetEl = document.getElementById(targetId);
-          if (targetEl) {
-            targetEl.classList.add('active');
-            // Re-initialize Embla Carousel dimensions after layout update
-            setTimeout(() => {
-              window.dispatchEvent(new Event('resize'));
-            }, 50);
-          }
-        }
-      };
-    });
+    /* Portfolio Showcase Tabs (Replaced by React State) */
 
     // Fallback: forcefully show everything after 1.5 seconds in case IntersectionObserver or Scroll logic fails
     setTimeout(() => {
@@ -688,6 +723,10 @@ export default function Home() {
             <p>
               I’m still growing and figuring out my direction, but I’m always open to new experiences, ideas, and opportunities to learn.
             </p>
+            
+            <div className="mt-4">
+              <AnimatedSocialIcons icons={aboutSocialIcons} iconSize={20} />
+            </div>
           </div>
         </div>
       </div>
@@ -928,6 +967,72 @@ export default function Home() {
       </div>
     </section>
 
+    {/* ============ GITHUB ACTIVITY ============ */}
+    <section className="section" id="github-activity">
+      <div className="section-inner">
+        <div className="section-head-center" data-reveal style={{ textAlign: "center", marginBottom: "3rem" } as React.CSSProperties}>
+          <h2 className="section-title" style={{ display: "inline-flex", alignItems: "center", justifyItems: "center", gap: "10px" } as React.CSSProperties}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+            GitHub Activity
+          </h2>
+          <p className="section-subtitle">
+            A glimpse into my open-source contributions and coding activity.
+          </p>
+        </div>
+
+        <div className="flex flex-col gap-6 max-w-[1000px] mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Top Languages */}
+            <div className="bg-white dark:bg-[#18181B] rounded-[24px] p-6 shadow-[0_2px_10px_rgb(0,0,0,0.04)] border border-gray-100 dark:border-gray-800 transition-all duration-300 hover:shadow-lg w-full flex flex-col items-center">
+              <h3 className="text-[18px] font-bold mb-4 self-start" style={{ color: 'var(--color-on-surface)' }}>Top Languages</h3>
+              <img 
+                src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=firnassw&layout=compact&theme=transparent&hide_border=true&title_color=0078D4&text_color=475569" 
+                alt="Top Languages" 
+                className="w-full max-w-[400px] object-contain light-img"
+              />
+              <img 
+                src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=firnassw&layout=compact&theme=transparent&hide_border=true&title_color=3B82F6&text_color=94a3b8" 
+                alt="Top Languages" 
+                className="w-full max-w-[400px] object-contain dark-img"
+              />
+            </div>
+
+            {/* GitHub Streak Stats */}
+            <div className="bg-white dark:bg-[#18181B] rounded-[24px] p-6 shadow-[0_2px_10px_rgb(0,0,0,0.04)] border border-gray-100 dark:border-gray-800 transition-all duration-300 hover:shadow-lg w-full flex flex-col items-center">
+              <h3 className="text-[18px] font-bold mb-4 self-start" style={{ color: 'var(--color-on-surface)' }}>GitHub Streak</h3>
+              <img 
+                src="https://github-readme-streak-stats.herokuapp.com/?user=firnassw&theme=transparent&hide_border=true&title_color=0078D4&text_color=475569&icon_color=0078D4&date_format=j%20M%5B%20Y%5D" 
+                alt="GitHub Streak" 
+                className="w-full max-w-[550px] object-contain light-img"
+              />
+              <img 
+                src="https://github-readme-streak-stats.herokuapp.com/?user=firnassw&theme=transparent&hide_border=true&title_color=3B82F6&text_color=94a3b8&icon_color=3B82F6&date_format=j%20M%5B%20Y%5D" 
+                alt="GitHub Streak" 
+                className="w-full max-w-[550px] object-contain dark-img"
+              />
+            </div>
+          </div>
+
+          {/* Contribution Graph */}
+          <div className="bg-white dark:bg-[#18181B] rounded-[24px] p-6 shadow-[0_2px_10px_rgb(0,0,0,0.04)] border border-gray-100 dark:border-gray-800 transition-all duration-300 hover:shadow-lg w-full flex flex-col">
+            <h3 className="text-[18px] font-bold mb-4" style={{ color: 'var(--color-on-surface)' }}>Contribution Graph</h3>
+            <div className="w-full overflow-x-auto text-center whitespace-nowrap pb-2">
+              <img 
+                src="https://raw.githubusercontent.com/firnassw/firnassw/output/github-contribution-grid-snake.svg" 
+                alt="GitHub Contribution Snake" 
+                className="inline-block min-w-[880px] w-[880px] max-w-none h-auto light-img"
+              />
+              <img 
+                src="https://raw.githubusercontent.com/firnassw/firnassw/output/github-contribution-grid-snake-dark.svg" 
+                alt="GitHub Contribution Snake" 
+                className="inline-block min-w-[880px] w-[880px] max-w-none h-auto dark-img"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     {/* ============ PORTFOLIO SHOWCASE ============ */}
     <section className="section section-tint" id="showcase">
       <div className="section-inner">
@@ -937,26 +1042,25 @@ export default function Home() {
             Portfolio Showcase</h2>
           <p className="section-desc" style={{ "maxWidth": "600px", "margin": "0 auto", "color": "var(--color-on-surface-variant)" } as React.CSSProperties}>
             Explore my journey through projects, certifications, and competitions. Each section represents a milestone
-            in my continuous learning path.</p>
-        </div>
-
-        {/* TAB NAVIGATION */}
-        <div className="tab-nav-container" data-reveal>
-          <div className="tab-nav">
-            <button className="tab-btn active" data-tab="tab-projects">
-              <span className="material-symbols-outlined">code</span> Projects
-            </button>
-            <button className="tab-btn" data-tab="tab-certificates">
-              <span className="material-symbols-outlined">workspace_premium</span> Certificates
-            </button>
-            <button className="tab-btn" data-tab="tab-lomba">
-              <span className="material-symbols-outlined">emoji_events</span> Lomba
-            </button>
+            in my continuous learning path.
+          </p>
+          <div className="flex items-center justify-center gap-2 mt-4 text-sm font-medium opacity-80" style={{ color: 'var(--color-primary)' }}>
+            <span className="material-symbols-outlined animate-bounce">ads_click</span>
+            <span>Klik pada kartu untuk melihat detail selengkapnya</span>
           </div>
         </div>
 
+        {/* TAB NAVIGATION */}
+        <div className="tab-nav-container flex justify-center mb-8" data-reveal>
+          <MenuBar
+            items={glowMenuItems}
+            activeItem={activeTab}
+            onItemClick={setActiveTab}
+          />
+        </div>
+
         {/* TAB CONTENT: PROJECTS */}
-        <div className="tab-content active" id="tab-projects">
+        <div className={`tab-content ${activeTab === "Projects" ? "active" : ""}`} id="tab-projects">
           <div className="projects-grid">
             {projectsItems.map((project) => (
               <Link href={`/project/${project.id}`} key={project.id} className="block group">
@@ -976,7 +1080,6 @@ export default function Home() {
                     <h3 className="portfolio-title">{project.title}</h3>
                     <div className="desc-wrapper">
                       <p className="portfolio-desc">{project.summary}</p>
-                      <span className="read-more-btn">Lihat Detail</span>
                     </div>
                     <div className="portfolio-chips">
                       {project.techStack.slice(0, 5).map((tech, i) => (
@@ -994,12 +1097,12 @@ export default function Home() {
         </div>
 
         {/* TAB CONTENT: CERTIFICATES */}
-        <div className="tab-content" id="tab-certificates">
+        <div className={`tab-content ${activeTab === "Certificates" ? "active" : ""}`} id="tab-certificates">
           <Gallery6 heading="Certifications" items={certsItems} />
         </div>
 
         {/* TAB CONTENT: LOMBA */}
-        <div className="tab-content" id="tab-lomba">
+        <div className={`tab-content ${activeTab === "Lomba" ? "active" : ""}`} id="tab-lomba">
           <Gallery6 heading="Competitions" items={lombaItems} />
         </div>
       </div>

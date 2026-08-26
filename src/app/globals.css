@@ -3668,3 +3668,6 @@ html.dark .skills-modal-container {
 .skills-more-link:hover {
   text-decoration: underline;
 }
+
+html:not(.dark) .dark-img { display: none !important; }
+html.dark .light-img { display: none !important; }
