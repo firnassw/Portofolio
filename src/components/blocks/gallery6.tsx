@@ -112,7 +112,6 @@ const Gallery6 = ({
                     <div className="glow-border"></div>
                   </div>
                   
-                  {/* Image Section (Edge to Edge) */}
                   <div 
                     className="w-full aspect-[16/9] border-b border-gray-100 dark:border-gray-800 relative overflow-hidden bg-white dark:bg-white flex items-center justify-center p-4 cursor-pointer"
                     onClick={() => setSelectedImage(item.image)}
@@ -124,7 +123,6 @@ const Gallery6 = ({
                     />
                   </div>
 
-                  {/* Content Section */}
                   <div className="p-6 flex flex-col flex-grow">
                     <h3 className="line-clamp-2 break-words text-xl font-bold text-gray-900 dark:text-white leading-snug">
                       {item.title}
@@ -136,9 +134,7 @@ const Gallery6 = ({
                       </p>
                     )}
 
-                    {/* Bottom Group (Metadata + Footer) */}
                     <div className="mt-auto pt-8">
-                      {/* Metadata Section */}
                       {(item.issuer || item.year || item.credentialId) && (
                         <div className="space-y-3.5 mb-8">
                           {item.issuer && (
@@ -162,7 +158,6 @@ const Gallery6 = ({
                         </div>
                       )}
 
-                      {/* Footer Links */}
                       <div className="flex flex-wrap items-center gap-5 pt-1">
                         <a href={item.url} target="_blank" rel="noreferrer" className="flex items-center text-[0.9rem] font-semibold text-[#0078D4] hover:text-[#005a9e] dark:text-[#3B82F6] dark:hover:text-[#60a5fa] transition-colors">
                           {item.credentialId ? "View Credential" : "View Details"} <ArrowUpRight className="ml-1 w-4 h-4" />
@@ -182,13 +177,11 @@ const Gallery6 = ({
         </Carousel>
       </div>
 
-      {/* Fullscreen Image Modal */}
       {selectedImage && (
         <div 
           className="fixed inset-0 z-[100] flex items-center justify-center bg-black/85 p-6 md:p-12 backdrop-blur-sm transition-opacity"
           onClick={() => setSelectedImage(null)}
         >
-          {/* Close button fixed to top right of the screen */}
           <button 
             className="absolute top-4 right-4 md:top-6 md:right-6 text-white bg-gray-900/60 hover:bg-black border border-white/20 backdrop-blur-md transition-all p-3 rounded-full shadow-2xl z-[110] flex items-center justify-center"
             onClick={() => setSelectedImage(null)}
@@ -197,7 +190,6 @@ const Gallery6 = ({
             <X className="w-5 h-5 md:w-6 md:h-6" />
           </button>
           
-          {/* Inner container to constrain image */}
           <div className="relative w-full h-full max-w-6xl flex items-center justify-center" onClick={(e) => e.stopPropagation()}>
             <img 
               src={selectedImage} 

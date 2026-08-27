@@ -21,7 +21,6 @@ export default async function ProjectDetail({ params }: { params: Promise<{ id: 
     <div className="min-h-screen bg-[var(--color-background)] text-[var(--color-on-surface)] pb-20">
       <div className="w-full max-w-[1200px] mx-auto px-6 md:px-8" style={{ marginTop: '-30px', paddingTop: 0 }}>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          {/* Left Column */}
           <div className="lg:col-span-5 flex flex-col pt-0">
             <Link href="/#showcase" className="inline-flex items-center font-medium mb-10 hover:opacity-80 transition-opacity w-max" style={{ color: '#4F46E5', marginTop: '-12px' }}>
               <ArrowLeft className="w-4 h-4 mr-2" /> Kembali ke Projects
@@ -38,7 +37,6 @@ export default async function ProjectDetail({ params }: { params: Promise<{ id: 
             <p className="text-base md:text-lg leading-relaxed" style={{ color: 'var(--color-on-surface-variant)', marginBottom: '2rem' }}>
               {project.about}
             </p>
-            {/* Metadata Grid */}
             <div className="grid grid-cols-2 gap-x-4 text-[14.5px]" style={{ marginBottom: '2rem', rowGap: '2.5rem' }}>
               <div className="flex flex-col gap-1.5">
                 <div className="flex items-center font-bold" style={{ color: 'var(--color-on-surface)' }}>
@@ -66,7 +64,6 @@ export default async function ProjectDetail({ params }: { params: Promise<{ id: 
               </div>
             </div>
 
-            {/* Fitur Utama */}
             <div>
               <h3 className="text-xl font-bold" style={{ color: 'var(--color-on-surface)', marginBottom: '1.5rem' }}>Fitur Utama</h3>
               <ul style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
@@ -80,7 +77,6 @@ export default async function ProjectDetail({ params }: { params: Promise<{ id: 
             </div>
           </div>
 
-          {/* Right Column (Hero Image & Cards) */}
           <div className="lg:col-span-7 flex flex-col pt-0">
             <div className="relative w-full rounded-[24px] overflow-hidden shadow-sm border border-gray-200/50 dark:border-gray-800 mb-6 bg-[#0B0F19] aspect-video">
               <img 
@@ -102,9 +98,7 @@ export default async function ProjectDetail({ params }: { params: Promise<{ id: 
                 </div>
               )}
             </div>
-            {/* Cards Below Image */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-8">
-              {/* Tech Stack Card */}
               <div className="bg-white dark:bg-[#18181B] rounded-[24px] p-7 shadow-[0_2px_10px_rgb(0,0,0,0.04)] border border-gray-100 dark:border-gray-800 flex flex-col justify-start sm:row-span-2 h-full">
                 <h3 className="text-[16px] font-bold" style={{ color: 'var(--color-on-surface)', marginBottom: '24px' }}>Tech Stack</h3>
                 <div className="flex flex-wrap gap-3.5">
@@ -119,7 +113,6 @@ export default async function ProjectDetail({ params }: { params: Promise<{ id: 
                 </div>
               </div>
 
-              {/* Tantangan Card */}
               <div className="bg-white dark:bg-[#18181B] rounded-[24px] p-7 shadow-[0_2px_10px_rgb(0,0,0,0.04)] border border-gray-100 dark:border-gray-800">
                 <h3 className="text-[16px] font-bold mb-2.5" style={{ color: 'var(--color-on-surface)' }}>Tantangan</h3>
                 <p className="text-[14px] leading-relaxed" style={{ color: 'var(--color-on-surface-variant)' }}>
@@ -127,7 +120,6 @@ export default async function ProjectDetail({ params }: { params: Promise<{ id: 
                 </p>
               </div>
 
-              {/* Solusi Card */}
               <div className="bg-white dark:bg-[#18181B] rounded-[24px] p-7 shadow-[0_2px_10px_rgb(0,0,0,0.04)] border border-gray-100 dark:border-gray-800">
                 <h3 className="text-[16px] font-bold mb-2.5" style={{ color: 'var(--color-on-surface)' }}>Solusi</h3>
                 <p className="text-[14px] leading-relaxed" style={{ color: 'var(--color-on-surface-variant)' }}>

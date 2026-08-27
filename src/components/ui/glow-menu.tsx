@@ -61,7 +61,7 @@ const sharedTransition = {
 
 export const MenuBar = React.forwardRef<HTMLDivElement, MenuBarProps>(
   ({ className, items, activeItem, onItemClick, ...props }, ref) => {
-    // Handling case where next-themes is not used, since this project uses raw html.dark toggles
+    
     const isDarkTheme = typeof document !== 'undefined' && document.documentElement.classList.contains('dark')
 
     return (

@@ -4,8 +4,8 @@ const path = require('path');
 const pagePath = path.join(process.cwd(), 'src', 'app', 'page.tsx');
 let content = fs.readFileSync(pagePath, 'utf8');
 
-// The logic we need to insert
-const logicToInsert = `    // Setup text characters for hover effect on fmLinks
+
+const logicToInsert = `    
     const fmLinks = document.querySelectorAll('.fm-link');
     fmLinks.forEach(link => {
       const text = link.getAttribute('data-text');
@@ -49,7 +49,7 @@ const logicToInsert = `    // Setup text characters for hover effect on fmLinks
         charElements.push(innerSpan);
       });
   
-      // Hover logic
+      
       let animating = false;
       let pendingLeave = false;
       const lockDuration = 30 * chars.length + 300;
@@ -86,13 +86,13 @@ const logicToInsert = `    // Setup text characters for hover effect on fmLinks
         }
       });
       
-      // Close menu when a link is clicked
+      
       link.addEventListener('click', () => {
         if (fmBox) fmBox.classList.remove('is-open');
       });
     });
 
-    // Also allow clicking fmBox itself to open if it's not already open
+    
     if (fmBox) {
       fmBox.onclick = (e) => {
         if (!fmBox.classList.contains('is-open')) {
@@ -101,7 +101,7 @@ const logicToInsert = `    // Setup text characters for hover effect on fmLinks
       };
     }
     
-    // Close on outside click
+    
     const mousedownListener = (e: MouseEvent) => {
       if (fmBox && fmBox.classList.contains('is-open') && !fmBox.contains(e.target as Node) && fmToggle && !fmToggle.contains(e.target as Node)) {
         fmBox.classList.remove('is-open');

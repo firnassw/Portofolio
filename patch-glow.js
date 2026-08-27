@@ -4,8 +4,7 @@ const path = require('path');
 const pagePath = path.join(process.cwd(), 'src', 'app', 'page.tsx');
 let content = fs.readFileSync(pagePath, 'utf8');
 
-const logicToInsert = `    /* Glowing Effect (Border Beam) */
-    const PROXIMITY = 64;
+const logicToInsert = `    const PROXIMITY = 64;
     const INACTIVE_ZONE = 0.01;
   
     let animationFrameId: number | null = null;
@@ -45,7 +44,7 @@ const logicToInsert = `    /* Glowing Effect (Border Beam) */
   
           const angleDiff = ((targetAngle - currentAngle + 180) % 360) - 180;
           
-          // Smooth interpolation (lerp) towards the target angle
+          
           const smoothedAngle = currentAngle + angleDiff * 0.15;
           el.style.setProperty("--start", String(smoothedAngle));
         }
@@ -72,7 +71,7 @@ const logicToInsert = `    /* Glowing Effect (Border Beam) */
     window.addEventListener('scroll', handleMoveOrScroll, { passive: true });
 `;
 
-// Insert it right after the Intersection Observer logic
+
 const anchorPoint = `        });
       },
       { threshold: 0.1 }

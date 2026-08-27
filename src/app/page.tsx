@@ -71,7 +71,7 @@ const sertifikatItems = [
   }
 ];
 
-// projectsItems is now imported from src/data/projects.ts
+
 
 const certsItems = [
   {
@@ -224,14 +224,14 @@ export default function Home() {
     const [activeTab, setActiveTab] = useState<string>("Projects");
 
     useEffect(() => {
-      // Re-initialize Embla Carousel dimensions after layout update when activeTab changes
+      
       setTimeout(() => {
         window.dispatchEvent(new Event('resize'));
       }, 50);
     }, [activeTab]);
 
     useEffect(() => {
-    // Ensure page-loaded is always added so the hero section becomes visible
+    
     document.body.classList.add('page-loaded');
 
     const hasVisited = sessionStorage.getItem('hasVisited');
@@ -239,23 +239,22 @@ export default function Home() {
     
     if (preloader) {
       if (hasVisited) {
-        // Hide immediately if returning
+        
         preloader.style.display = 'none';
       } else {
-        // First visit: set flag and run animation
+        
         sessionStorage.setItem('hasVisited', 'true');
         setTimeout(() => {
           preloader.classList.add('hidden');
           setTimeout(() => {
             preloader.style.display = 'none';
           }, 800);
-        }, 500); // 500ms delay to let the initial Next.js hydration settle
+        }, 500); 
       }
     }
 
     const root = document.documentElement;
 
-    /* Theme Toggle */
     const themeCheckbox = document.getElementById('theme-checkbox');
     if (themeCheckbox) {
       themeCheckbox.onchange = (e) => {
@@ -267,7 +266,6 @@ export default function Home() {
       };
     }
 
-    /* Menu mobile */
     const menuToggle = document.getElementById('menu-toggle');
     const mobileNav = document.getElementById('mobile-nav');
 
@@ -297,7 +295,6 @@ export default function Home() {
       });
     }
 
-    /* Scroll Reveal */
     const reveals = document.querySelectorAll('[data-reveal]');
     const revealOnScroll = () => {
       const windowHeight = window.innerHeight;
@@ -312,18 +309,18 @@ export default function Home() {
     window.addEventListener('scroll', revealOnScroll);
     revealOnScroll();
 
-    /* Liquid Morph Menu */
     const fmBox = document.getElementById('fm-box');
     const fmToggle = document.getElementById('fm-toggle');
     
-    // Define named function so we can remove it
+    
     if (fmToggle && fmBox) {
-      fmToggle.onclick = () => {
+      fmToggle.onclick = (e) => {
+        e.stopPropagation();
         fmBox.classList.toggle('is-open');
       };
     }
 
-    // Setup text characters for hover effect on fmLinks
+    
     const fmLinks = document.querySelectorAll('.fm-link');
     fmLinks.forEach(link => {
       const text = link.getAttribute('data-text');
@@ -367,7 +364,7 @@ export default function Home() {
         charElements.push(innerSpan);
       });
   
-      // Hover logic
+      
       let animating = false;
       let pendingLeave = false;
       const lockDuration = 30 * chars.length + 300;
@@ -404,13 +401,13 @@ export default function Home() {
         }
       });
       
-      // Close menu when a link is clicked
+      
       link.addEventListener('click', () => {
         if (fmBox) fmBox.classList.remove('is-open');
       });
     });
 
-    // Also allow clicking fmBox itself to open if it's not already open
+    
     if (fmBox) {
       fmBox.onclick = (e) => {
         if (!fmBox.classList.contains('is-open')) {
@@ -419,7 +416,7 @@ export default function Home() {
       };
     }
     
-    // Close on outside click
+    
     const mousedownListener = (e: MouseEvent) => {
       if (fmBox && fmBox.classList.contains('is-open') && !fmBox.contains(e.target as Node) && fmToggle && !fmToggle.contains(e.target as Node)) {
         fmBox.classList.remove('is-open');
@@ -429,7 +426,6 @@ export default function Home() {
     document.addEventListener('mousedown', mousedownListener);
 
 
-    /* BlurText Intersection Observer */
     const blurChars = document.querySelectorAll('.blur-text-char') as NodeListOf<HTMLElement>;
     const blurWords = document.querySelectorAll('.blur-text-word span') as NodeListOf<HTMLElement>;
     const observer = new IntersectionObserver((entries) => {
@@ -453,7 +449,6 @@ export default function Home() {
     });
 
     
-    /* Glowing Effect (Border Beam) */
     const PROXIMITY = 64;
     const INACTIVE_ZONE = 0.01;
   
@@ -494,7 +489,7 @@ export default function Home() {
   
           const angleDiff = ((targetAngle - currentAngle + 180) % 360) - 180;
           
-          // Smooth interpolation (lerp) towards the target angle
+          
           const smoothedAngle = currentAngle + angleDiff * 0.15;
           el.style.setProperty("--start", String(smoothedAngle));
         }
@@ -521,7 +516,6 @@ export default function Home() {
     window.addEventListener('scroll', handleMoveOrScroll, { passive: true });
 
 
-    /* ---------- SKILLS MODAL ---------- */
     (window as any).openSkillsModal = function(title: string, skills: string[]) {
       const modal = document.getElementById('skillsModal');
       const titleEl = document.getElementById('skillsModalTitle');
@@ -550,7 +544,7 @@ export default function Home() {
       }
     };
 
-    // Close modal when clicking outside of it
+    
     const modalClickListener = (e: MouseEvent) => {
       const modal = document.getElementById('skillsModal');
       if (e.target === modal) {
@@ -559,7 +553,7 @@ export default function Home() {
     };
     window.addEventListener('click', modalClickListener);
 
-    // Close modal with Escape key
+    
     const modalKeydownListener = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         (window as any).closeSkillsModal();
@@ -567,9 +561,7 @@ export default function Home() {
     };
     window.addEventListener('keydown', modalKeydownListener);
 
-    /* Portfolio Showcase Tabs (Replaced by React State) */
-
-    // Fallback: forcefully show everything after 1.5 seconds in case IntersectionObserver or Scroll logic fails
+    
     setTimeout(() => {
       blurChars.forEach((el) => {
         el.style.filter = 'blur(0px)';
@@ -603,20 +595,17 @@ export default function Home() {
   return (
     <>
       
-  {/* Preloader */}
   <div id="preloader" className="preloader">
     <video src="./logo/preloader.mp4" autoPlay loop muted playsInline className="preloader-video"></video>
   </div>
   <a className="skip-link" href="#main">Langsung ke konten</a>
 
-  {/* ============ HEADER ============ */}
   <header className="site-header" id="site-header">
     <div className="header-inner">
       <a href="#top" className="brand">
         <img src="./logo/logo.png" alt="WF Logo" className="brand-logo" />
       </a>
 
-      {/* Theme Toggle */}
       <label className="theme-switch" id="theme-switch-label">
         <input type="checkbox" id="theme-checkbox" className="theme-switch__checkbox" />
         <div className="theme-switch__container">
@@ -647,10 +636,8 @@ export default function Home() {
   <main id="main">
     <h1 className="sr-only">Wahid Firnas Atsal</h1>
 
-    {/* ============ HERO ============ */}
     <section className="hero hero-centered">
 
-      {/* Centered Main Name */}
       <div className="hero-name-container">
         <div className="blur-text-line">
           <span className="blur-text-char">W</span>
@@ -668,13 +655,11 @@ export default function Home() {
           <span className="blur-text-char">S</span>
         </div>
 
-        {/* Profile Picture */}
         <div className="hero-floating-avatar">
           <img src="./logo/foto kecil.png" alt="Profile" loading="lazy" />
         </div>
       </div>
 
-      {/* Tagline */}
       <div className="hero-tagline-wrapper">
         <p className="hero-tagline blur-text-word">
           <span>Designing</span>&nbsp;
@@ -685,13 +670,11 @@ export default function Home() {
         </p>
       </div>
 
-      {/* Scroll Indicator */}
       <a href="#about" className="hero-scroll-btn" aria-label="Scroll down">
         <span className="material-symbols-outlined">keyboard_arrow_down</span>
       </a>
     </section>
 
-    {/* ============ ABOUT ============ */}
     <section className="section section-tint" id="about">
       <div className="section-inner">
         <div className="about-photo-wrapper">
@@ -734,8 +717,6 @@ export default function Home() {
       <div className="w-full max-w-[1200px] mx-auto mt-8 px-4 md:px-8">
         <div className="marquee-wrapper">
           <div className="marquee-content animate-marquee">
-            {/* We repeat the 4 items 4 times to make the original set wide enough, 
-                then repeat that entire block again for the seamless loop. */}
             {[...Array(2)].map((_, setIndex) => (
               <React.Fragment key={setIndex}>
                 {[...Array(4)].map((_, repeatIndex) => (
@@ -765,7 +746,6 @@ export default function Home() {
       </div>
     </section>
 
-    {/* ============ SKILLS ============ */}
     <section className="section" id="skills">
       <div className="section-inner" style={{ "maxWidth": "1200px", "margin": "0 auto", "padding": "4rem 20px" } as React.CSSProperties}>
         <div className="section-head-center" data-reveal style={{ "textAlign": "center", "marginBottom": "3rem" } as React.CSSProperties}>
@@ -890,7 +870,6 @@ export default function Home() {
       </div>
     </section>
 
-    {/* ============ EXPERIENCE ============ */}
     <section className="section section-tint" id="experience">
       <div className="section-inner">
         <div className="section-head-left" data-reveal>
@@ -967,7 +946,6 @@ export default function Home() {
       </div>
     </section>
 
-    {/* ============ GITHUB ACTIVITY ============ */}
     <section className="section" id="github-activity">
       <div className="section-inner">
         <div className="section-head-center" data-reveal style={{ textAlign: "center", marginBottom: "3rem" } as React.CSSProperties}>
@@ -982,7 +960,6 @@ export default function Home() {
 
         <div className="flex flex-col gap-6 max-w-[1000px] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Top Languages */}
             <div className="bg-white dark:bg-[#18181B] rounded-[24px] p-6 shadow-[0_2px_10px_rgb(0,0,0,0.04)] border border-gray-100 dark:border-gray-800 transition-all duration-300 hover:shadow-lg w-full flex flex-col items-center">
               <h3 className="text-[18px] font-bold mb-4 self-start" style={{ color: 'var(--color-on-surface)' }}>Top Languages</h3>
               <img 
@@ -997,7 +974,6 @@ export default function Home() {
               />
             </div>
 
-            {/* GitHub Streak Stats */}
             <div className="bg-white dark:bg-[#18181B] rounded-[24px] p-6 shadow-[0_2px_10px_rgb(0,0,0,0.04)] border border-gray-100 dark:border-gray-800 transition-all duration-300 hover:shadow-lg w-full flex flex-col items-center">
               <h3 className="text-[18px] font-bold mb-4 self-start" style={{ color: 'var(--color-on-surface)' }}>GitHub Streak</h3>
               <img 
@@ -1013,7 +989,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Contribution Graph */}
           <div className="bg-white dark:bg-[#18181B] rounded-[24px] p-6 shadow-[0_2px_10px_rgb(0,0,0,0.04)] border border-gray-100 dark:border-gray-800 transition-all duration-300 hover:shadow-lg w-full flex flex-col">
             <h3 className="text-[18px] font-bold mb-4" style={{ color: 'var(--color-on-surface)' }}>Contribution Graph</h3>
             <div className="w-full overflow-x-auto text-center whitespace-nowrap pb-2">
@@ -1033,7 +1008,6 @@ export default function Home() {
       </div>
     </section>
 
-    {/* ============ PORTFOLIO SHOWCASE ============ */}
     <section className="section section-tint" id="showcase">
       <div className="section-inner">
         <div className="section-head-center" data-reveal style={{ "textAlign": "center", "marginBottom": "2rem" } as React.CSSProperties}>
@@ -1050,7 +1024,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* TAB NAVIGATION */}
         <div className="tab-nav-container w-full max-w-full flex justify-center mb-8 px-2" data-reveal>
           <MenuBar
             items={glowMenuItems}
@@ -1059,7 +1032,6 @@ export default function Home() {
           />
         </div>
 
-        {/* TAB CONTENT: PROJECTS */}
         <div className={`tab-content ${activeTab === "Projects" ? "active" : ""}`} id="tab-projects">
           <div className="projects-grid">
             {projectsItems.map((project) => (
@@ -1096,19 +1068,16 @@ export default function Home() {
           </div>
         </div>
 
-        {/* TAB CONTENT: CERTIFICATES */}
         <div className={`tab-content ${activeTab === "Certificates" ? "active" : ""}`} id="tab-certificates">
           <Gallery6 heading="Certifications" items={certsItems} />
         </div>
 
-        {/* TAB CONTENT: LOMBA */}
         <div className={`tab-content ${activeTab === "Lomba" ? "active" : ""}`} id="tab-lomba">
           <Gallery6 heading="Competitions" items={lombaItems} />
         </div>
       </div>
     </section>
 
-    {/* ============ CONTACT ============ */}
     <section className="section section-tint contact-hero-section" id="contact">
       <div className="section-inner contact-grid-new">
         <div className="contact-content-container">
@@ -1186,14 +1155,10 @@ export default function Home() {
             <a href="mailto:firnaswahid@gmail.com" className="btn btn-outline btn-block"><span
                 className="material-symbols-outlined">chat_bubble</span> Let's Work Together</a>
           </div>
-        </div> {/* /contact-main-card */}
-        </div> {/* /contact-content-container */}
-      </div> {/* /section-inner */}
-    </section>
+        </div> </div> </div> </section>
 
   </main>
 
-  {/* ============ FOOTER ============ */}
   <footer className="site-footer section-tint" style={{ "padding": "20px var(--margin-mobile) 0" } as React.CSSProperties}>
     <div className="footer-card">
       <div className="fc-top">
@@ -1252,7 +1217,6 @@ export default function Home() {
     </div>
   </footer>
 
-  {/* ============ SKILLS MODAL ============ */}
   <div className="skills-modal-overlay" id="skillsModal" aria-hidden="true">
     <div className="skills-modal-container">
       <div className="skills-modal-header">
@@ -1270,14 +1234,11 @@ export default function Home() {
     <span className="material-symbols-outlined">arrow_upward</span>
   </button>
 
-  {/* ============ LIQUID MORPH FLOATING MENU ============ */}
   <div id="fm-container" className="fm-wrapper">
     <div className="fm-box" id="fm-box">
-      {/* Background layers */}
       <div className="fm-bg-yellow"></div>
       <div className="fm-bg-dark"></div>
 
-      {/* Top bar (Menu toggle) */}
       <div className="fm-bottom-bar" id="fm-toggle">
         <div className="fm-hamburger">
           <span className="fm-line fm-line-1"></span>
@@ -1285,7 +1246,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Menu items */}
       <div className="fm-items">
         <a href="#top" className="fm-link" data-text="HOME"></a>
         <a href="#experience" className="fm-link" data-text="EXPERIENCE"></a>

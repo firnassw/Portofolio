@@ -4,16 +4,13 @@ const path = require('path');
 const pagePath = path.join(process.cwd(), 'src', 'app', 'page.tsx');
 let content = fs.readFileSync(pagePath, 'utf8');
 
-// 1. Add Import
 const importStatement = `import { Gallery6 } from "@/components/blocks/gallery6";\n`;
 if (!content.includes('import { Gallery6 }')) {
-  // Find the last import and insert after it
   const importsEnd = content.lastIndexOf('import ');
   const nextLineEnd = content.indexOf('\n', importsEnd);
   content = content.substring(0, nextLineEnd + 1) + importStatement + content.substring(nextLineEnd + 1);
 }
 
-// Data Arrays for Gallery6
 const projectsData = `
 const projectsItems = [
   {
@@ -99,33 +96,33 @@ const lombaItems = [
 ];
 `;
 
-// Insert the data inside the Home component before the return
+
 if (!content.includes('projectsItems')) {
   const returnIndex = content.indexOf('return (');
   content = content.substring(0, returnIndex) + projectsData + certsData + lombaData + '\n  ' + content.substring(returnIndex);
 }
 
-// Replace Projects Tab Content
+
 content = content.replace(
   /<div className="tab-content active" id="tab-projects">[\s\S]*?<!-- TAB CONTENT: CERTIFICATES -->/g,
   `<div className="tab-content active" id="tab-projects">
           <Gallery6 heading="Featured Projects" items={projectsItems} />
         </div>
 
-        {/* TAB CONTENT: CERTIFICATES */}`
+        `
 );
 
-// Replace Certificates Tab Content
+
 content = content.replace(
   /<div className="tab-content" id="tab-certificates">[\s\S]*?{\/\* TAB CONTENT: LOMBA \*\/}/g,
   `<div className="tab-content" id="tab-certificates">
           <Gallery6 heading="Certifications" items={certsItems} />
         </div>
 
-        {/* TAB CONTENT: LOMBA */}`
+        `
 );
 
-// Replace Lomba Tab Content
+
 content = content.replace(
   /<div className="tab-content" id="tab-lomba">[\s\S]*?<\/div>\s*<\/div>\s*<\/section>/g,
   `<div className="tab-content" id="tab-lomba">

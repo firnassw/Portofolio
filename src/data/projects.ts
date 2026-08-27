@@ -2,11 +2,11 @@ export interface ProjectDetail {
   id: string;
   badge: string;
   title: string;
-  summary: string; // Used for the card on the home page
-  description: string; // Used as the short description on the detail page
+  summary: string; 
+  description: string; 
   url: string;
-  image: string; // Used for the detail page hero
-  thumbnailImage?: string; // Optional: Used for the card on the home page
+  image: string; 
+  thumbnailImage?: string; 
   metadata: {
     period: string;
     role: string;
@@ -18,7 +18,7 @@ export interface ProjectDetail {
   techStack: string[];
   challenge: string;
   solution: string;
-  prototypeUrl?: string; // Optional URL for prototype button
+  prototypeUrl?: string; 
 }
 
 export const projectsItems: ProjectDetail[] = [

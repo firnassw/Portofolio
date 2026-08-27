@@ -4,8 +4,8 @@ const path = require('path');
 const pagePath = path.join(__dirname, 'src', 'app', 'page.tsx');
 let page = fs.readFileSync(pagePath, 'utf8');
 
-// The Gallery6 component takes props: heading, demoUrl, items
-// We'll define the arrays right in the component or above it.
+
+
 
 const projekItems = [
   {
@@ -69,17 +69,17 @@ const sertifikatItems = [
   }
 ];
 
-// Re-write the page.tsx to inject these arrays and replace the sections
+
 const regexProjek = /<section id="projek"[^>]*>[\s\S]*?<\/section>/i;
 const regexSertifikat = /<section id="sertifikat"[^>]*>[\s\S]*?<\/section>/i;
-// Assuming there might be a Lomba section, but if not we'll just not replace it.
+
 const regexLomba = /<section id="lomba"[^>]*>[\s\S]*?<\/section>/i;
 
 let updatedPage = page.replace(regexProjek, `<div id="projek"><Gallery6 heading="Projek" demoUrl="#" items={projekItems} /></div>`);
 updatedPage = updatedPage.replace(regexSertifikat, `<div id="sertifikat"><Gallery6 heading="Sertifikat" demoUrl="#" items={sertifikatItems} /></div>`);
-updatedPage = updatedPage.replace(regexLomba, `<div id="lomba"><Gallery6 heading="Lomba & Kompetisi" demoUrl="#" items={[]} /></div>`); // Empty if we don't have Lomba items yet
+updatedPage = updatedPage.replace(regexLomba, `<div id="lomba"><Gallery6 heading="Lomba & Kompetisi" demoUrl="#" items={[]} /></div>`); 
 
-// Inject the arrays at the top of the component
+
 updatedPage = updatedPage.replace('export default function Home() {', `
 const projekItems = ${JSON.stringify(projekItems, null, 2)};
 const sertifikatItems = ${JSON.stringify(sertifikatItems, null, 2)};

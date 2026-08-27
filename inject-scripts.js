@@ -5,7 +5,7 @@ const pagePath = path.join(process.cwd(), 'src', 'app', 'page.tsx');
 let page = fs.readFileSync(pagePath, 'utf8');
 
 const newUseEffect = `  useEffect(() => {
-    // Ensure page-loaded is always added so the hero section becomes visible
+    
     document.body.classList.add('page-loaded');
 
     const preloader = document.getElementById('preloader');
@@ -15,12 +15,11 @@ const newUseEffect = `  useEffect(() => {
         setTimeout(() => {
           preloader.style.display = 'none';
         }, 800);
-      }, 500); // 500ms delay to let the initial Next.js hydration settle
+      }, 500); 
     }
 
     const root = document.documentElement;
 
-    /* Theme Toggle */
     const themeCheckbox = document.getElementById('theme-checkbox');
     if (themeCheckbox) {
       themeCheckbox.addEventListener('change', (e) => {
@@ -32,7 +31,6 @@ const newUseEffect = `  useEffect(() => {
       });
     }
 
-    /* Menu mobile */
     const menuToggle = document.getElementById('menu-toggle');
     const mobileNav = document.getElementById('mobile-nav');
 
@@ -62,7 +60,6 @@ const newUseEffect = `  useEffect(() => {
       });
     }
 
-    /* Scroll Reveal */
     const reveals = document.querySelectorAll('[data-reveal]');
     const revealOnScroll = () => {
       const windowHeight = window.innerHeight;
@@ -77,7 +74,6 @@ const newUseEffect = `  useEffect(() => {
     window.addEventListener('scroll', revealOnScroll);
     revealOnScroll();
 
-    /* Liquid Morph Menu */
     const fmBox = document.getElementById('fm-box');
     const fmToggle = document.getElementById('fm-toggle');
     if (fmToggle && fmBox) {
@@ -86,7 +82,6 @@ const newUseEffect = `  useEffect(() => {
       });
     }
 
-    /* BlurText Intersection Observer */
     const blurChars = document.querySelectorAll('.blur-text-char') as NodeListOf<HTMLElement>;
     const blurWords = document.querySelectorAll('.blur-text-word span') as NodeListOf<HTMLElement>;
     const observer = new IntersectionObserver((entries) => {
@@ -114,7 +109,7 @@ const newUseEffect = `  useEffect(() => {
     };
   }, []);`;
 
-// Replace the entire useEffect block
+
 const regex = /useEffect\(\(\) => \{[\s\S]*?\}, \[\]\);/m;
 if (page.match(regex)) {
   page = page.replace(regex, newUseEffect);
