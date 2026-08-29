@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArrowLeft, Calendar, User, PenTool, CheckCircle2, Diamond, ExternalLink } from 'lucide-react';
 import { projectsItems } from '@/data/projects';
+import { FlowButton } from '@/components/ui/flow-button';
 
 export async function generateStaticParams() {
   return projectsItems.map((project) => ({
@@ -91,9 +92,8 @@ export default async function ProjectDetail({ params }: { params: Promise<{ id: 
                     href={project.prototypeUrl} 
                     target="_blank" 
                     rel="noreferrer"
-                    className="inline-flex items-center px-5 py-3 bg-[#4F46E5] hover:bg-[#4338ca] text-white rounded-[14px] transition-all font-semibold text-[13px] shadow-xl"
                   >
-                    {project.badge === 'WEB PROJECT' ? 'Lihat Kode' : 'Lihat Prototype di Figma'} <ExternalLink className="w-4 h-4 ml-2" />
+                    <FlowButton text={project.badge === 'WEB PROJECT' ? 'Lihat Kode' : 'Lihat Prototype di Figma'} />
                   </a>
                 </div>
               )}
