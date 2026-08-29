@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { ArrowLeft, Calendar, User, PenTool, CheckCircle2, Diamond, ExternalLink } from 'lucide-react';
 import { projectsItems } from '@/data/projects';
 import { FlowButton } from '@/components/ui/flow-button';
+import { Button } from '@/components/ui/button';
 
 export async function generateStaticParams() {
   return projectsItems.map((project) => ({
@@ -23,9 +24,12 @@ export default async function ProjectDetail({ params }: { params: Promise<{ id: 
       <div className="w-full max-w-[1200px] mx-auto px-6 md:px-8" style={{ marginTop: '-30px', paddingTop: 0 }}>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           <div className="lg:col-span-5 flex flex-col pt-0">
-            <Link href="/#showcase" className="inline-flex items-center font-medium mb-10 hover:opacity-80 transition-opacity w-max" style={{ color: '#4F46E5', marginTop: '-12px' }}>
-              <ArrowLeft className="w-4 h-4 mr-2" /> Kembali ke Projects
-            </Link>
+            <Button asChild variant="ghost" className="group flex items-center justify-center gap-1 mb-10 w-max hover:bg-[#4F46E5]/10" style={{ color: '#4F46E5', marginTop: '-12px', paddingLeft: '8px', marginLeft: '-8px' }}>
+              <Link href="/#showcase">
+                <ArrowLeft className="transition-transform duration-200 group-hover:-translate-x-1 w-4 h-4 mr-1" />
+                Kembali ke Projects
+              </Link>
+            </Button>
 
             <div className="inline-block px-4 py-1.5 text-[11px] font-bold tracking-widest uppercase rounded-full w-max mb-6" style={{ backgroundColor: '#FFF0E5', color: '#E87B35' }}>
               {project.badge}
@@ -114,7 +118,7 @@ export default async function ProjectDetail({ params }: { params: Promise<{ id: 
               </div>
 
               <div className="bg-white dark:bg-[#18181B] rounded-[24px] p-7 shadow-[0_2px_10px_rgb(0,0,0,0.04)] border border-gray-100 dark:border-gray-800">
-                <h3 className="text-[16px] font-bold mb-2.5" style={{ color: 'var(--color-on-surface)' }}>Tantangan</h3>
+                <h3 className="text-[16px] font-bold mb-2.5" style={{ color: 'var(--color-on-surface)' }}>Latar Belakang</h3>
                 <p className="text-[14px] leading-relaxed" style={{ color: 'var(--color-on-surface-variant)' }}>
                   {project.challenge}
                 </p>
