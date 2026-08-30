@@ -1409,7 +1409,7 @@ html.dark .date-purple {
   grid-template-columns: 1fr;
   gap: var(--stack-xl);
   align-items: center;
-  max-width: 800px;
+  max-width: 1024px;
   margin: 0 auto;
 }
 
