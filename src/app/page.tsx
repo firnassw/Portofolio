@@ -1089,8 +1089,8 @@ export default function Home() {
           <GlassmorphismProfileCard
             avatarUrl="https://avatars.githubusercontent.com/u/89201977?v=4"
             name="Wahid Firnas"
-            title="Web Developer & Informatics Student"
-            bio="Building beautiful and intuitive digital experiences. Passionate about web development and software engineering."
+            title="Web Developer | Aspiring Business Analyst"
+            bio="I build practical digital solutions with a focus on technology, data, and user experience."
             socialLinks={[
               { id: 'email', icon: Mail, label: 'Email', href: 'mailto:firnaswahid@gmail.com' },
               { id: 'github', icon: GithubIcon, label: 'GitHub', href: 'https://github.com/firnassw' },
