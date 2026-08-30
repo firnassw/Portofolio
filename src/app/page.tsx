@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Gallery6 } from "@/components/blocks/gallery6";
 import DiscreteTabs from "@/components/ui/discrete-tab";
-import { GlassmorphismProfileCard } from "@/components/ui/profile-card-1";
+import { ContactCard } from "@/components/ui/contact-card";
 import { AnimatedSocialIcons } from "@/components/ui/floating-action-button";
 import { Code, Award, Trophy, Mail } from "lucide-react";
 import { projectsItems } from "@/data/projects";
@@ -1085,12 +1085,13 @@ export default function Home() {
             <span className="dot"></span> Let's Connect
           </div>
           <h2 className="contact-title" style={{ marginBottom: "1rem", textAlign: "center" }}>Contact Me</h2>
+          <p className="text-center text-gray-500 dark:text-gray-400 mb-8 max-w-lg mx-auto leading-relaxed">
+            I'm always open to discussing new opportunities, collaborations, or just having a good conversation.
+          </p>
           
-          <GlassmorphismProfileCard
+          <ContactCard
             avatarUrl="https://avatars.githubusercontent.com/u/89201977?v=4"
             name="Wahid Firnas"
-            title="Web Developer | Aspiring Business Analyst"
-            bio="I build practical digital solutions with a focus on technology, data, and user experience."
             socialLinks={[
               { id: 'email', icon: Mail, label: 'Email', href: 'mailto:firnaswahid@gmail.com' },
               { id: 'github', icon: GithubIcon, label: 'GitHub', href: 'https://github.com/firnassw' },
@@ -1098,7 +1099,7 @@ export default function Home() {
               { id: 'instagram', icon: InstagramIcon, label: 'Instagram', href: 'https://www.instagram.com/firnassw/' },
             ]}
             actionButton={{
-              text: 'Contact Me',
+              text: 'Send a Message',
               href: 'mailto:firnaswahid@gmail.com',
               target: '_blank'
             }}
