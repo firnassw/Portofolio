@@ -7,7 +7,7 @@ import { Gallery6 } from "@/components/blocks/gallery6";
 import DiscreteTabs from "@/components/ui/discrete-tab";
 import { GlassmorphismProfileCard } from "@/components/ui/profile-card-1";
 import { AnimatedSocialIcons } from "@/components/ui/floating-action-button";
-import { Code, Award, Trophy, Mail, Github, Linkedin, Instagram } from "lucide-react";
+import { Code, Award, Trophy, Mail } from "lucide-react";
 import { projectsItems } from "@/data/projects";
 
 
@@ -1093,9 +1093,9 @@ export default function Home() {
             bio="Building beautiful and intuitive digital experiences. Passionate about web development and software engineering."
             socialLinks={[
               { id: 'email', icon: Mail, label: 'Email', href: 'mailto:firnaswahid@gmail.com' },
-              { id: 'github', icon: Github, label: 'GitHub', href: 'https://github.com/firnassw' },
-              { id: 'linkedin', icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/wahid-firnas/' },
-              { id: 'instagram', icon: Instagram, label: 'Instagram', href: 'https://www.instagram.com/firnassw/' },
+              { id: 'github', icon: GithubIcon, label: 'GitHub', href: 'https://github.com/firnassw' },
+              { id: 'linkedin', icon: LinkedinIcon, label: 'LinkedIn', href: 'https://www.linkedin.com/in/wahid-firnas/' },
+              { id: 'instagram', icon: InstagramIcon, label: 'Instagram', href: 'https://www.instagram.com/firnassw/' },
             ]}
             actionButton={{
               text: 'Download CV',
