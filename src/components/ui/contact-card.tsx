@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { Mail, Github, Linkedin, Instagram, Navigation, Code2, Lightbulb, ArrowUpRight } from 'lucide-react';
+import { Mail, Github, Linkedin, Instagram, Navigation, Code2, Lightbulb, ArrowUpRight, ArrowRight, ExternalLink } from 'lucide-react';
 
 export const ContactCard = ({
   avatarUrl,
@@ -111,10 +111,25 @@ export const ContactCard = ({
               href={actionButton.href}
               target={actionButton.target || "_blank"}
               rel="noopener noreferrer"
-              className="flex items-center justify-center w-full gap-2 px-6 py-4 rounded-full font-semibold text-[15px] transition-all duration-300 ease-out hover:scale-[1.02] active:scale-[0.98] group bg-[#4F46E5] hover:bg-[#4338CA] text-white shadow-[0_8px_25px_rgba(79,70,229,0.25)]"
+              className="group relative flex items-center justify-center w-full gap-2 overflow-hidden rounded-[14px] bg-[#A5B4FC] py-4 text-[15px] font-semibold text-[#111111] shadow-xl transition-all duration-[600ms] ease-[cubic-bezier(0.23,1,0.32,1)] active:scale-[0.98]"
             >
-              <span>{actionButton.text}</span>
-              <ArrowUpRight size={18} className="transition-transform duration-300 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              {/* Left arrow */}
+              <ArrowRight 
+                className="absolute w-5 h-5 left-[-25%] stroke-[#111111] fill-none z-[9] group-hover:left-5 sm:group-hover:left-8 group-hover:stroke-white transition-all duration-[800ms] ease-[cubic-bezier(0.34,1.56,0.64,1)]" 
+              />
+
+              {/* Text */}
+              <span className="relative z-[1] transition-all duration-[800ms] ease-out group-hover:text-white">
+                {actionButton.text}
+              </span>
+
+              {/* Circle */}
+              <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-5 h-5 bg-[#4F46E5] rounded-[50%] opacity-0 group-hover:w-[1000px] group-hover:h-[1000px] group-hover:opacity-100 transition-all duration-[800ms] ease-[cubic-bezier(0.19,1,0.22,1)]"></span>
+
+              {/* Right arrow */}
+              <ExternalLink 
+                className="absolute w-5 h-5 right-5 sm:right-8 stroke-[#111111] fill-none z-[9] group-hover:right-[-25%] group-hover:stroke-white transition-all duration-[800ms] ease-[cubic-bezier(0.34,1.56,0.64,1)]" 
+              />
             </a>
             <p className="text-[12px] text-gray-400 dark:text-gray-500 mt-4 font-medium">
               I'll get back to you as soon as possible!
