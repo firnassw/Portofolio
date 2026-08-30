@@ -1088,7 +1088,7 @@ export default function Home() {
           <h2 className="text-[40px] md:text-[48px] font-extrabold text-center text-gray-900 dark:text-white mb-4 tracking-tight">Contact Me</h2>
           
           <ContactCard
-            avatarUrl="https://avatars.githubusercontent.com/u/89201977?v=4"
+            avatarUrl="/profile.jpg"
             name="Wahid Firnas"
             socialLinks={[
               { id: 'email', icon: Mail, label: 'Email', href: 'mailto:firnaswahid@gmail.com' },
