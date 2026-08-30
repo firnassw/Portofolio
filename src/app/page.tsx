@@ -1098,8 +1098,8 @@ export default function Home() {
               { id: 'instagram', icon: InstagramIcon, label: 'Instagram', href: 'https://www.instagram.com/firnassw/' },
             ]}
             actionButton={{
-              text: 'Download CV',
-              href: './sertifikat/cv.pdf',
+              text: 'Contact Me',
+              href: 'mailto:firnaswahid@gmail.com',
               target: '_blank'
             }}
           />
