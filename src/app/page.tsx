@@ -1081,11 +1081,12 @@ export default function Home() {
     <section className="section section-tint contact-hero-section" id="contact">
       <div className="section-inner contact-grid-new">
         <div className="contact-content-container w-full">
-          <div className="pill-label" style={{ margin: "0 auto 1rem", display: "inline-flex", alignSelf: "center" }}>
-            <span className="dot"></span> Let's Connect
+          <div className="flex items-center justify-center gap-2 px-4 py-1.5 mb-6 mx-auto w-fit rounded-full bg-[#EEF2FF] dark:bg-[#4F46E5]/10 text-[#4F46E5] dark:text-[#818cf8] text-[13px] font-semibold">
+            <div className="w-1.5 h-1.5 rounded-full bg-[#4F46E5] dark:bg-[#818cf8]" />
+            Let's Connect
           </div>
-          <h2 className="contact-title" style={{ marginBottom: "1rem", textAlign: "center" }}>Contact Me</h2>
-          <p className="text-center text-gray-500 dark:text-gray-400 mb-8 max-w-lg mx-auto leading-relaxed">
+          <h2 className="text-[40px] md:text-[48px] font-extrabold text-center text-gray-900 dark:text-white mb-4 tracking-tight">Contact Me</h2>
+          <p className="text-center text-[15px] text-gray-500 dark:text-gray-400 mb-12 max-w-[540px] mx-auto leading-relaxed">
             I'm always open to discussing new opportunities, collaborations, or just having a good conversation.
           </p>
           
