@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import { Mail, Github, Linkedin, ArrowUpRight, Instagram } from 'lucide-react';
+import { Mail, ArrowUpRight } from 'lucide-react';
 
 export const GlassmorphismProfileCard = ({
   avatarUrl,

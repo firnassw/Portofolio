@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { Mail, Github, Linkedin, Instagram, Navigation, Code2, Lightbulb, ArrowUpRight, ArrowRight, ExternalLink } from 'lucide-react';
+import { Mail, Navigation, Code2, Lightbulb, ArrowUpRight, ArrowRight, ExternalLink } from 'lucide-react';
 
 export const ContactCard = ({
   avatarUrl,
