@@ -4,7 +4,7 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Gallery6 } from "@/components/blocks/gallery6";
-import { MenuBar } from "@/components/ui/glow-menu";
+import DiscreteTabs from "@/components/ui/discrete-tab";
 import { AnimatedSocialIcons } from "@/components/ui/floating-action-button";
 import { Code, Award, Trophy, Mail } from "lucide-react";
 import { projectsItems } from "@/data/projects";
@@ -1025,10 +1025,9 @@ export default function Home() {
         </div>
 
         <div className="tab-nav-container w-full max-w-full flex justify-center mb-8 px-2" data-reveal>
-          <MenuBar
-            items={glowMenuItems}
-            activeItem={activeTab}
-            onItemClick={setActiveTab}
+          <DiscreteTabs
+            activeTab={activeTab}
+            setActiveTab={setActiveTab}
           />
         </div>
 
