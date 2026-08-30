@@ -65,41 +65,47 @@ export const ContactCard = ({
 
         {/* Right Column: Features & Action */}
         <div className="flex-1 p-8 sm:p-12 flex flex-col justify-between bg-gray-50/50 dark:bg-[#18181B]/50">
-          <div className="flex flex-col gap-8 mb-10">
+          <div className="flex flex-col gap-4 mb-10">
             {/* Feature 1 */}
-            <div className="flex items-start gap-5">
-              <div className="flex items-center justify-center w-12 h-12 rounded-2xl bg-[#EEF2FF] dark:bg-[#4F46E5]/10 text-[#4F46E5] dark:text-[#818cf8] shrink-0">
-                <Navigation size={20} className="ml-[-2px] mt-[2px]" />
+            <div className="flex items-center p-4 sm:p-5 rounded-2xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-[#18181B] shadow-sm transition-all hover:shadow-md">
+              <div className="flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-[#EEF2FF] dark:bg-[#4F46E5]/10 text-[#4F46E5] dark:text-[#818cf8] shrink-0">
+                <Navigation size={22} className="ml-[-2px] mt-[2px]" />
               </div>
-              <div className="flex flex-col pt-1">
-                <h4 className="text-[16px] font-bold text-gray-900 dark:text-white mb-1.5">Let's Collaborate</h4>
-                <p className="text-[14px] text-gray-500 dark:text-gray-400 leading-relaxed">
+              <div className="w-px h-14 sm:h-16 bg-gray-100 dark:bg-gray-800 mx-4 sm:mx-5 shrink-0" />
+              <div className="flex flex-col flex-1">
+                <h4 className="text-[15px] sm:text-[16px] font-bold text-gray-900 dark:text-white mb-1">Let's Collaborate</h4>
+                <div className="w-6 h-[2px] bg-[#4F46E5] rounded-full mb-2" />
+                <p className="text-[13px] sm:text-[14px] text-gray-500 dark:text-gray-400 leading-relaxed">
                   I'm open to exciting projects, internships, and collaborative opportunities.
                 </p>
               </div>
             </div>
 
             {/* Feature 2 */}
-            <div className="flex items-start gap-5">
-              <div className="flex items-center justify-center w-12 h-12 rounded-2xl bg-[#EEF2FF] dark:bg-[#4F46E5]/10 text-[#4F46E5] dark:text-[#818cf8] shrink-0">
-                <Code2 size={20} />
+            <div className="flex items-center p-4 sm:p-5 rounded-2xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-[#18181B] shadow-sm transition-all hover:shadow-md">
+              <div className="flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-[#EEF2FF] dark:bg-[#4F46E5]/10 text-[#4F46E5] dark:text-[#818cf8] shrink-0">
+                <Code2 size={22} />
               </div>
-              <div className="flex flex-col pt-1">
-                <h4 className="text-[16px] font-bold text-gray-900 dark:text-white mb-1.5">Tech & Problem Solver</h4>
-                <p className="text-[14px] text-gray-500 dark:text-gray-400 leading-relaxed">
+              <div className="w-px h-14 sm:h-16 bg-gray-100 dark:bg-gray-800 mx-4 sm:mx-5 shrink-0" />
+              <div className="flex flex-col flex-1">
+                <h4 className="text-[15px] sm:text-[16px] font-bold text-gray-900 dark:text-white mb-1">Tech & Problem Solver</h4>
+                <div className="w-6 h-[2px] bg-[#4F46E5] rounded-full mb-2" />
+                <p className="text-[13px] sm:text-[14px] text-gray-500 dark:text-gray-400 leading-relaxed">
                   Passionate about web development, data, and solving real-world problems.
                 </p>
               </div>
             </div>
 
             {/* Feature 3 */}
-            <div className="flex items-start gap-5">
-              <div className="flex items-center justify-center w-12 h-12 rounded-2xl bg-[#EEF2FF] dark:bg-[#4F46E5]/10 text-[#4F46E5] dark:text-[#818cf8] shrink-0">
-                <Lightbulb size={20} />
+            <div className="flex items-center p-4 sm:p-5 rounded-2xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-[#18181B] shadow-sm transition-all hover:shadow-md">
+              <div className="flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-[#EEF2FF] dark:bg-[#4F46E5]/10 text-[#4F46E5] dark:text-[#818cf8] shrink-0">
+                <Lightbulb size={22} />
               </div>
-              <div className="flex flex-col pt-1">
-                <h4 className="text-[16px] font-bold text-gray-900 dark:text-white mb-1.5">Always Learning</h4>
-                <p className="text-[14px] text-gray-500 dark:text-gray-400 leading-relaxed">
+              <div className="w-px h-14 sm:h-16 bg-gray-100 dark:bg-gray-800 mx-4 sm:mx-5 shrink-0" />
+              <div className="flex flex-col flex-1">
+                <h4 className="text-[15px] sm:text-[16px] font-bold text-gray-900 dark:text-white mb-1">Always Learning</h4>
+                <div className="w-6 h-[2px] bg-[#4F46E5] rounded-full mb-2" />
+                <p className="text-[13px] sm:text-[14px] text-gray-500 dark:text-gray-400 leading-relaxed">
                   Continuously exploring new technologies to build better solutions.
                 </p>
               </div>
