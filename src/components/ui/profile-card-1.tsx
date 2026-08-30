@@ -37,9 +37,9 @@ export const GlassmorphismProfileCard = ({
           />
         </div>
 
-        <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100">{name}</h2>
-        <p className="mt-1 text-sm font-medium text-[#4F46E5] dark:text-[#6366f1]">{title}</p>
-        <p className="mt-4 text-center text-sm leading-relaxed text-gray-600 dark:text-gray-400">{bio}</p>
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2">{name}</h2>
+        <p className="text-sm sm:text-base font-medium text-[#4F46E5] dark:text-[#6366f1] mb-5">{title}</p>
+        <p className="text-center text-sm sm:text-base leading-relaxed text-gray-600 dark:text-gray-400 max-w-sm">{bio}</p>
 
         <div className="w-1/2 h-px my-6 rounded-full bg-gray-200 dark:bg-gray-800" />
 
