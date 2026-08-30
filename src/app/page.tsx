@@ -1086,9 +1086,6 @@ export default function Home() {
             Let's Connect
           </div>
           <h2 className="text-[40px] md:text-[48px] font-extrabold text-center text-gray-900 dark:text-white mb-4 tracking-tight">Contact Me</h2>
-          <p className="text-center text-[15px] text-gray-500 dark:text-gray-400 mb-12 max-w-[540px] mx-auto leading-relaxed">
-            I'm always open to discussing new opportunities, collaborations, or just having a good conversation.
-          </p>
           
           <ContactCard
             avatarUrl="https://avatars.githubusercontent.com/u/89201977?v=4"
