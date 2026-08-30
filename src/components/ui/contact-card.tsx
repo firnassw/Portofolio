@@ -71,7 +71,7 @@ export const ContactCard = ({
               <div className="flex items-center justify-center w-14 h-14 rounded-full bg-[#EEF2FF] dark:bg-[#4F46E5]/10 text-[#4F46E5] dark:text-[#818cf8] shrink-0">
                 <Navigation size={22} className="ml-[-2px] mt-[2px]" />
               </div>
-              <div className="flex flex-col">
+              <div className="flex flex-col text-left">
                 <h4 className="text-[16px] font-bold text-gray-900 dark:text-white mb-1.5">Let's Collaborate</h4>
                 <p className="text-[14px] text-gray-500 dark:text-gray-400 leading-relaxed">
                   I'm open to exciting projects, internships, and collaborative opportunities.
@@ -84,7 +84,7 @@ export const ContactCard = ({
               <div className="flex items-center justify-center w-14 h-14 rounded-full bg-[#EEF2FF] dark:bg-[#4F46E5]/10 text-[#4F46E5] dark:text-[#818cf8] shrink-0">
                 <Code2 size={22} />
               </div>
-              <div className="flex flex-col">
+              <div className="flex flex-col text-left">
                 <h4 className="text-[16px] font-bold text-gray-900 dark:text-white mb-1.5">Tech & Problem Solver</h4>
                 <p className="text-[14px] text-gray-500 dark:text-gray-400 leading-relaxed">
                   Passionate about web development, data, and solving real-world problems.
@@ -97,7 +97,7 @@ export const ContactCard = ({
               <div className="flex items-center justify-center w-14 h-14 rounded-full bg-[#EEF2FF] dark:bg-[#4F46E5]/10 text-[#4F46E5] dark:text-[#818cf8] shrink-0">
                 <Lightbulb size={22} />
               </div>
-              <div className="flex flex-col">
+              <div className="flex flex-col text-left">
                 <h4 className="text-[16px] font-bold text-gray-900 dark:text-white mb-1.5">Always Learning</h4>
                 <p className="text-[14px] text-gray-500 dark:text-gray-400 leading-relaxed">
                   Continuously exploring new technologies to build better solutions.
