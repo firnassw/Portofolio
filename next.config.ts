@@ -5,6 +5,8 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
+  // Menginformasikan Turbopack lokasi root proyek
+  turbopack: { root: __dirname },
 };
 
 export default nextConfig;

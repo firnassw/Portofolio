@@ -93,9 +93,8 @@ export default async function ProjectDetail({ params }: { params: Promise<{ id: 
               {project.prototypeUrl && (
                 <div className="absolute bottom-5 right-5">
                   <a 
-                    href={project.prototypeUrl} 
-                    target="_blank" 
-                    rel="noreferrer"
+                  href={project.prototypeUrl} 
+                  target="_blank" rel="noopener noreferrer"
                   >
                     <FlowButton text={project.badge === 'WEB PROJECT' ? 'Lihat Kode' : 'Lihat Prototype di Figma'} />
                   </a>
