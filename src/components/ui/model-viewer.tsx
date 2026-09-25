@@ -30,7 +30,7 @@ export function ModelViewer({ src, alt, className = "" }: ModelViewerProps) {
 
   return (
     <div className={`w-full h-full min-h-[300px] rounded-xl overflow-hidden bg-muted/10 relative ${className}`}>
-      {/* @ts-ignore */}
+      {/* @ts-expect-error - Custom web component not in JSX intrinsic elements */}
       <model-viewer
         src={src}
         alt={alt}
