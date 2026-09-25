@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Portofolio Wahid Firnas",
     description: "Lihat proyek, sertifikat, dan keahlian UI/UX & web development.",
-    url: "https://your-domain.com",
+    url: "https://wahid-firnas.netlify.app",
     siteName: "Wahid Firnas Portfolio",
     images: [
       {
@@ -39,7 +40,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="id">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />

@@ -7,9 +7,6 @@ const nextConfig: NextConfig = {
   },
   // Menginformasikan Turbopack lokasi root proyek
   turbopack: { root: __dirname },
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
 };
 
 export default nextConfig;
