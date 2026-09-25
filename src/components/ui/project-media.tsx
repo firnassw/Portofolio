@@ -84,7 +84,7 @@ export function ProjectMedia({ image, modelUrl, title, badge, prototypeUrl }: Pr
         {prototypeUrl && (
           <div className="absolute bottom-5 right-5 z-20">
             <a href={prototypeUrl} target="_blank" rel="noopener noreferrer">
-              <FlowButton text={badge === 'WEB PROJECT' ? 'Lihat Kode' : 'Lihat Prototype di Figma'} />
+              <FlowButton text={badge === 'WEB PROJECT' ? (prototypeUrl.includes('github.com') ? 'Lihat Kode' : 'Kunjungi Web') : 'Lihat Prototype di Figma'} />
             </a>
           </div>
         )}

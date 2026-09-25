@@ -78,7 +78,7 @@ export const projectsItems: ProjectDetail[] = [
     techStack: ["HTML5", "CSS3", "JavaScript", "PHP Native", "MySQL", "Bootstrap 5", "Chart.js"],
     challenge: "Banyak mahasiswa yang kesulitan mengelola keuangan dan sering mengabaikan kesehatan mereka saat tinggal di kos.",
     solution: "Menghadirkan aplikasi all-in-one yang mudah digunakan untuk tracking pengeluaran sekaligus memiliki fitur pemantauan kesehatan dasar.",
-    prototypeUrl: "https://github.com/firnassw/KostCare"
+    prototypeUrl: "https://kostcare.gt.tc/?i=1"
   },
   {
     id: "proj-3",
@@ -106,7 +106,7 @@ export const projectsItems: ProjectDetail[] = [
     techStack: ["HTML5", "CSS3", "PHP Native", "MySQL", "SQL", "Google Fonts", "Font Awesome", "XAMPP"],
     challenge: "Pencatatan rekam medis dan pengelolaan stok bahan kimia di laboratorium masih banyak yang dilakukan secara manual sehingga rawan kesalahan dan lambat.",
     solution: "Mendigitalisasi seluruh proses operasional laboratorium dengan sistem web responsif yang aman dan mudah dioperasikan oleh tenaga medis.",
-    prototypeUrl: "https://github.com/firnassw/MedikaLab"
+    prototypeUrl: "https://medikalab.site.je/index.php"
   },
   {
     id: "proj-quiettab",
