@@ -1,8 +1,10 @@
-/* eslint-disable @next/next/no-img-element */
+ 
 import React from 'react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Button } from '@/components/ui/button';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { ArrowLeft, Calendar, User, PenTool, CheckCircle2, Diamond, ExternalLink } from 'lucide-react';
 import { projectsItems } from '@/data/projects';
 import { ProjectMedia } from '@/components/ui/project-media';

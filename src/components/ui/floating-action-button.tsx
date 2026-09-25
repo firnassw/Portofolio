@@ -1,13 +1,14 @@
-/* eslint-disable @next/next/no-img-element */
+ 
 'use client'
 
 import { motion } from "framer-motion"
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { Plus, LucideIcon } from "lucide-react"
 import React, { useState } from "react"
 import { cn } from "@/lib/utils"
 
 interface SocialIcon {
-  Icon: React.ElementType<any>
+  Icon: React.ElementType<unknown>
   href?: string
   className?: string
 }

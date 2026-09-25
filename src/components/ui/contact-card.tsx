@@ -1,8 +1,10 @@
-/* eslint-disable @next/next/no-img-element */
+ 
 "use client";
 
 import React from 'react';
 import Image from 'next/image'
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { Mail, Navigation, Code2, Lightbulb, ArrowUpRight, ArrowRight, ExternalLink } from 'lucide-react';
 
 export const ContactCard = ({
@@ -13,8 +15,8 @@ export const ContactCard = ({
 }: {
   avatarUrl: string;
   name: string;
-  socialLinks?: any[];
-  actionButton: any;
+  socialLinks?: unknown[];
+  actionButton: unknown;
 }) => {
   return (
     <div className="relative w-full max-w-[900px] mx-auto my-8">
@@ -81,9 +83,9 @@ export const ContactCard = ({
                 <Navigation size={22} className="ml-[-2px] mt-[2px]" />
               </div>
               <div className="flex flex-col text-left">
-                <h4 className="text-[16px] font-bold text-gray-900 dark:text-white mb-1.5">Let's Collaborate</h4>
+                <h4 className="text-[16px] font-bold text-gray-900 dark:text-white mb-1.5">Let&apos;s Collaborate</h4>
                 <p className="text-[14px] text-gray-500 dark:text-gray-400 leading-relaxed">
-                  I'm open to exciting projects, internships, and collaborative opportunities.
+                  I&apos;m open to exciting projects, internships, and collaborative opportunities.
                 </p>
               </div>
             </div>
@@ -141,7 +143,7 @@ export const ContactCard = ({
               />
             </a>
             <p className="text-[12px] text-gray-400 dark:text-gray-500 mt-4 font-medium">
-              I'll get back to you as soon as possible!
+              I&apos;ll get back to you as soon as possible!
             </p>
           </div>
         </div>

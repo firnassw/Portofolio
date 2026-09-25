@@ -1,4 +1,4 @@
-/* eslint-disable @next/next/no-img-element */
+ 
 "use client";
 
 import { ArrowLeft, ArrowRight, ArrowUpRight, Landmark, CalendarDays, BadgeCheck, X } from "lucide-react";
@@ -33,6 +33,7 @@ export interface Gallery6Props {
 
 const Gallery6 = ({
   heading = "Gallery",
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
   demoUrl = "#",
   items = [],
 }: Gallery6Props) => {

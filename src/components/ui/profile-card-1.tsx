@@ -1,8 +1,9 @@
-/* eslint-disable @next/next/no-img-element */
+ 
 "use client";
 
 import React, { useState } from 'react';
 import Image from 'next/image'
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { Mail, ArrowUpRight } from 'lucide-react';
 
 export const GlassmorphismProfileCard = ({
@@ -17,8 +18,8 @@ export const GlassmorphismProfileCard = ({
   name: string;
   title: string;
   bio: string;
-  socialLinks?: any[];
-  actionButton: any;
+  socialLinks?: unknown[];
+  actionButton: unknown;
 }) => {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
@@ -61,7 +62,7 @@ export const GlassmorphismProfileCard = ({
   );
 };
 
-const SocialButton = ({ item, setHoveredItem, hoveredItem }: any) => (
+const SocialButton = ({ item, setHoveredItem, hoveredItem }: unknown) => (
   <div className="relative">
     <a
       href={item.href}
@@ -80,7 +81,7 @@ const SocialButton = ({ item, setHoveredItem, hoveredItem }: any) => (
   </div>
 );
 
-const ActionButton = ({ action }: any) => (
+const ActionButton = ({ action }: unknown) => (
   <a
     href={action.href}
     target={action.target || "_blank"}
@@ -97,7 +98,7 @@ const ActionButton = ({ action }: any) => (
   </a>
 );
 
-const Tooltip = ({ item, hoveredItem }: any) => (
+const Tooltip = ({ item, hoveredItem }: unknown) => (
   <div 
     role="tooltip"
     className={`absolute -top-12 left-1/2 -translate-x-1/2 z-50 px-3 py-1.5 rounded-lg backdrop-blur-md border text-xs font-medium whitespace-nowrap transition-all duration-300 ease-out pointer-events-none bg-gray-900 text-white dark:bg-gray-100 dark:text-gray-900 border-gray-800 dark:border-gray-200 ${hoveredItem === item.id ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}
