@@ -5,15 +5,17 @@ export interface ProjectDetail {
   summary: string; 
   description: string; 
   url: string;
-  image: string; 
+  image: string;
+  modelUrl?: string;
   thumbnailImage?: string; 
-  metadata: {
+  metadata?: {
     period: string;
     role: string;
     tools: string;
     status: string;
   };
   about: string;
+  featuresTitle?: string;
   features: string[];
   techStack: string[];
   challenge: string;
@@ -32,7 +34,7 @@ export const projectsItems: ProjectDetail[] = [
     image: "/projek/trueattribute-presentation.png",
     thumbnailImage: "/projek/trueattribute.png",
     metadata: {
-      period: "Mei 2024 - Jul 2024",
+      period: "Juli - Agustus 2026",
       role: "Product Designer",
       tools: "Figma",
       status: "Prototype"
@@ -60,7 +62,7 @@ export const projectsItems: ProjectDetail[] = [
     image: "/projek/kostcare-detail.jpg",
     thumbnailImage: "/projek/kostcare.png",
     metadata: {
-      period: "Agu 2023 - Okt 2023",
+      period: "Maret - Mei 2026",
       role: "Fullstack Developer",
       tools: "React Native, Laravel",
       status: "Production"
@@ -88,7 +90,7 @@ export const projectsItems: ProjectDetail[] = [
     image: "/projek/medikalab-detail.png",
     thumbnailImage: "/projek/medikalab.png",
     metadata: {
-      period: "Jan 2024 - Mar 2024",
+      period: "Maret - Mei 2026",
       role: "Backend Engineer",
       tools: "Flutter, Firebase, Express",
       status: "MVP"
@@ -105,5 +107,29 @@ export const projectsItems: ProjectDetail[] = [
     challenge: "Pencatatan rekam medis dan pengelolaan stok bahan kimia di laboratorium masih banyak yang dilakukan secara manual sehingga rawan kesalahan dan lambat.",
     solution: "Mendigitalisasi seluruh proses operasional laboratorium dengan sistem web responsif yang aman dan mudah dioperasikan oleh tenaga medis.",
     prototypeUrl: "https://github.com/firnassw/MedikaLab"
+  },
+  {
+    id: "proj-quiettab",
+    badge: "PROTOTYPE - 3D MODEL",
+    title: "QuietTab",
+    summary: "Perangkat kontrol presentasi hands-free berbasis sensor vibrasi dan Bluetooth.",
+    description: "QuietTap menghadirkan cara yang praktis dan minimalis untuk berpindah slide presentasi tanpa remote. Cukup ketuk meja dua kali, sensor akan membaca getaran dan mengirim sinyal ke laptop.",
+    url: "#",
+    image: "/projek/quiettab.jpg",
+    modelUrl: "/quiettab.glb",
+    thumbnailImage: "/projek/quiettab.jpg",
+    about: "QuietTap bekerja dengan cara sensor vibrasi di dalam casing mendeteksi pola getaran saat pengguna mengetuk dua kali (double tap) pada permukaan meja. Data getaran tersebut kemudian diproses oleh chip ESP32 untuk memastikan pola itu valid. Setelah itu, ESP32 akan mengirim sinyal via Bluetooth ke laptop yang sudah terhubung sehingga perintah seperti mengganti slide presentasi langsung dieksekusi. Semuanya berlangsung dalam hitungan milidetik dan didukung oleh daya dari USB-C atau baterai internal 500mAh untuk penggunaan nirkabel penuh.",
+    featuresTitle: "Manfaat QuietTap",
+    features: [
+      "Bebas bergerak tanpa harus memegang remote atau menyentuh laptop",
+      "Kontak visual lebih baik karena tangan tidak sibuk dengan alat",
+      "Kontrol tanpa suara, cukup dua ketukan di meja",
+      "Desain ringkas dan mudah dibawa kemana saja",
+      "Pengoperasian sederhana, tanpa perlu menghafal kombinasi tombol rumit",
+      "Mengurangi gangguan teknis, seperti remote yang tidak responsif atau salah pencet saat presentasi"
+    ],
+    techStack: ["ESP32", "Fusion 360", "KiCad", "Bluetooth LE", "Piezo Sensor", "3D Printing", "Li-Po Battery"],
+    challenge: "Presenter sering kesulitan mengontrol slide tanpa harus memegang remote atau terus-menerus menyentuh laptop, sehingga gerak mereka menjadi terbatas dan kontak visual dengan audiens pun terganggu. Terdapat kebutuhan akan cara yang lebih praktis dan minimalis untuk berpindah slide.",
+    solution: "Menghadirkan kontrol hands-free melalui sensor vibrasi dan Bluetooth: cukup dengan mengetuk meja dua kali, sinyal langsung terkirim ke laptop untuk menjalankan perintah seperti mengganti slide. Dengan begitu, presenter bisa tetap bergerak bebas dan fokus menjaga interaksi dengan audiens tanpa perlu memegang alat tambahan."
   }
 ];

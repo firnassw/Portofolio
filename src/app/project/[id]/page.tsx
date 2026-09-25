@@ -1,10 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import { Button } from '@/components/ui/button';
 import { ArrowLeft, Calendar, User, PenTool, CheckCircle2, Diamond, ExternalLink } from 'lucide-react';
 import { projectsItems } from '@/data/projects';
-import { FlowButton } from '@/components/ui/flow-button';
-import { Button } from '@/components/ui/button';
+import { ProjectMedia } from '@/components/ui/project-media';
 
 export async function generateStaticParams() {
   return projectsItems.map((project) => ({
@@ -24,7 +24,7 @@ export default async function ProjectDetail({ params }: { params: Promise<{ id: 
       <div className="w-full max-w-[1200px] mx-auto px-6 md:px-8" style={{ marginTop: '-30px', paddingTop: 0 }}>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           <div className="lg:col-span-5 flex flex-col pt-0">
-            <Button asChild variant="ghost" className="group flex items-center justify-center gap-1 mb-10 w-max hover:bg-[#4F46E5]/10" style={{ color: '#4F46E5', marginTop: '-12px', paddingLeft: '8px', marginLeft: '-8px' }}>
+            <Button asChild variant="ghost" className="group flex items-center justify-center gap-1 mb-4 w-max hover:bg-[#4F46E5]/10" style={{ color: '#4F46E5', marginTop: '-12px', paddingLeft: '8px', marginLeft: '-8px' }}>
               <Link href="/#showcase">
                 <ArrowLeft className="transition-transform duration-200 group-hover:-translate-x-1 w-4 h-4 mr-1" />
                 Kembali ke Projects
@@ -35,42 +35,45 @@ export default async function ProjectDetail({ params }: { params: Promise<{ id: 
               {project.badge}
             </div>
 
-            <h1 className="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight" style={{ color: 'var(--color-on-surface)' }}>
+            <h1 className="text-4xl md:text-5xl font-extrabold mb-10 tracking-tight" style={{ color: 'var(--color-on-surface)' }}>
               {project.title}
             </h1>
 
             <p className="text-base md:text-lg leading-relaxed" style={{ color: 'var(--color-on-surface-variant)', marginBottom: '2rem' }}>
               {project.about}
             </p>
-            <div className="grid grid-cols-2 gap-x-4 text-[14.5px]" style={{ marginBottom: '2rem', rowGap: '2.5rem' }}>
-              <div className="flex flex-col gap-1.5">
-                <div className="flex items-center font-bold" style={{ color: 'var(--color-on-surface)' }}>
-                  <Calendar className="w-4 h-4 mr-2" style={{ color: 'var(--color-on-surface-variant)' }} /> Periode
+            
+            {project.metadata && (
+              <div className="grid grid-cols-2 gap-x-4 text-[14.5px]" style={{ marginBottom: '2rem', rowGap: '2.5rem' }}>
+                <div className="flex flex-col gap-1.5">
+                  <div className="flex items-center font-bold" style={{ color: 'var(--color-on-surface)' }}>
+                    <Calendar className="w-4 h-4 mr-2" style={{ color: 'var(--color-on-surface-variant)' }} /> Periode
+                  </div>
+                  <div className="ml-6" style={{ color: 'var(--color-on-surface-variant)' }}>{project.metadata.period}</div>
                 </div>
-                <div className="ml-6" style={{ color: 'var(--color-on-surface-variant)' }}>{project.metadata.period}</div>
-              </div>
-              <div className="flex flex-col gap-1.5">
-                <div className="flex items-center font-bold" style={{ color: 'var(--color-on-surface)' }}>
-                  <User className="w-4 h-4 mr-2" style={{ color: 'var(--color-on-surface-variant)' }} /> Peran
+                <div className="flex flex-col gap-1.5">
+                  <div className="flex items-center font-bold" style={{ color: 'var(--color-on-surface)' }}>
+                    <User className="w-4 h-4 mr-2" style={{ color: 'var(--color-on-surface-variant)' }} /> Peran
+                  </div>
+                  <div className="ml-6" style={{ color: 'var(--color-on-surface-variant)' }}>{project.metadata.role}</div>
                 </div>
-                <div className="ml-6" style={{ color: 'var(--color-on-surface-variant)' }}>{project.metadata.role}</div>
-              </div>
-              <div className="flex flex-col gap-1.5">
-                <div className="flex items-center font-bold" style={{ color: 'var(--color-on-surface)' }}>
-                  <Diamond className="w-4 h-4 mr-2" style={{ color: 'var(--color-on-surface-variant)' }} /> Tools
+                <div className="flex flex-col gap-1.5">
+                  <div className="flex items-center font-bold" style={{ color: 'var(--color-on-surface)' }}>
+                    <Diamond className="w-4 h-4 mr-2" style={{ color: 'var(--color-on-surface-variant)' }} /> Tools
+                  </div>
+                  <div className="ml-6" style={{ color: 'var(--color-on-surface-variant)' }}>{project.metadata.tools}</div>
                 </div>
-                <div className="ml-6" style={{ color: 'var(--color-on-surface-variant)' }}>{project.metadata.tools}</div>
-              </div>
-              <div className="flex flex-col gap-1.5">
-                <div className="flex items-center font-bold" style={{ color: 'var(--color-on-surface)' }}>
-                  <CheckCircle2 className="w-4 h-4 mr-2" style={{ color: '#10B981' }} /> Status
+                <div className="flex flex-col gap-1.5">
+                  <div className="flex items-center font-bold" style={{ color: 'var(--color-on-surface)' }}>
+                    <CheckCircle2 className="w-4 h-4 mr-2" style={{ color: '#10B981' }} /> Status
+                  </div>
+                  <div className="ml-6" style={{ color: 'var(--color-on-surface-variant)' }}>{project.metadata.status}</div>
                 </div>
-                <div className="ml-6" style={{ color: 'var(--color-on-surface-variant)' }}>{project.metadata.status}</div>
               </div>
-            </div>
+            )}
 
             <div>
-              <h3 className="text-xl font-bold" style={{ color: 'var(--color-on-surface)', marginBottom: '1.5rem' }}>Fitur Utama</h3>
+              <h3 className="text-xl font-bold" style={{ color: 'var(--color-on-surface)', marginBottom: '1.5rem' }}>{project.featuresTitle || 'Fitur Utama'}</h3>
               <ul style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
                 {project.features.map((feature, i) => (
                   <li key={i} className="flex items-start">
@@ -83,37 +86,39 @@ export default async function ProjectDetail({ params }: { params: Promise<{ id: 
           </div>
 
           <div className="lg:col-span-7 flex flex-col pt-0">
-            <div className="relative w-full rounded-[24px] overflow-hidden shadow-sm border border-gray-200/50 dark:border-gray-800 mb-6 bg-[#0B0F19] aspect-video">
-              <img 
-                src={project.image} 
-                alt={`${project.title} Preview`}
-                className="w-full h-full object-contain"
-              />
-              
-              {project.prototypeUrl && (
-                <div className="absolute bottom-5 right-5">
-                  <a 
-                  href={project.prototypeUrl} 
-                  target="_blank" rel="noopener noreferrer"
-                  >
-                    <FlowButton text={project.badge === 'WEB PROJECT' ? 'Lihat Kode' : 'Lihat Prototype di Figma'} />
-                  </a>
-                </div>
-              )}
-            </div>
+            <ProjectMedia 
+              image={project.image}
+              modelUrl={project.modelUrl}
+              title={project.title}
+              badge={project.badge}
+              prototypeUrl={project.prototypeUrl}
+            />
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-8">
-              <div className="bg-white dark:bg-[#18181B] rounded-[24px] p-7 shadow-[0_2px_10px_rgb(0,0,0,0.04)] border border-gray-100 dark:border-gray-800 flex flex-col justify-start sm:row-span-2 h-full">
-                <h3 className="text-[16px] font-bold" style={{ color: 'var(--color-on-surface)', marginBottom: '24px' }}>Tech Stack</h3>
-                <div className="flex flex-wrap gap-3.5">
-                  {project.techStack.map((tech, i) => (
-                    <span 
-                      key={i} 
-                      className="px-4 py-2 text-[13px] font-semibold rounded-full bg-indigo-50 text-indigo-600 border border-indigo-100/50 shadow-[0_2px_8px_rgba(79,70,229,0.06)] dark:bg-indigo-500/10 dark:text-indigo-300 dark:border-indigo-500/20 hover:bg-indigo-100 hover:border-indigo-200 dark:hover:bg-indigo-500/20 dark:hover:border-indigo-500/30 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(79,70,229,0.15)] cursor-default flex items-center justify-center"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+              <div className="flex flex-col gap-5 sm:row-span-2 h-full">
+                <div className="bg-white dark:bg-[#18181B] rounded-[24px] p-7 shadow-[0_2px_10px_rgb(0,0,0,0.04)] border border-gray-100 dark:border-gray-800 flex-1 flex flex-col justify-start">
+                  <h3 className="text-[16px] font-bold" style={{ color: 'var(--color-on-surface)', marginBottom: '24px' }}>Tech Stack</h3>
+                  <div className="flex flex-wrap gap-3.5 my-auto">
+                    {project.techStack.map((tech, i) => (
+                      <span 
+                        key={i} 
+                        className="px-4 py-2 text-[13px] font-semibold rounded-full bg-indigo-50 text-indigo-600 border border-indigo-100/50 shadow-[0_2px_8px_rgba(79,70,229,0.06)] dark:bg-indigo-500/10 dark:text-indigo-300 dark:border-indigo-500/20 hover:bg-indigo-100 hover:border-indigo-200 dark:hover:bg-indigo-500/20 dark:hover:border-indigo-500/30 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(79,70,229,0.15)] cursor-default flex items-center justify-center"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
+
+                {project.id === 'proj-quiettab' && (
+                  <div className="bg-white dark:bg-[#18181B] rounded-[24px] p-7 shadow-[0_2px_10px_rgb(0,0,0,0.04)] border border-gray-100 dark:border-gray-800 flex-1 flex flex-col justify-start">
+                    <h3 className="text-[16px] font-bold mb-2.5" style={{ color: 'var(--color-on-surface)' }}>Identitas Penulis</h3>
+                    <div className="flex flex-col gap-3 text-[14px] my-auto" style={{ color: 'var(--color-on-surface-variant)' }}>
+                      <div className="flex items-center gap-1"><span className="font-bold text-[var(--color-on-surface)] w-14">Nama</span> <span>: Wahid Firnas Atsal</span></div>
+                      <div className="flex items-center gap-1"><span className="font-bold text-[var(--color-on-surface)] w-14">NIM</span> <span>: 124250066</span></div>
+                      <div className="flex items-center gap-1"><span className="font-bold text-[var(--color-on-surface)] w-14">Kelas</span> <span>: SI-C</span></div>
+                    </div>
+                  </div>
+                )}
               </div>
 
               <div className="bg-white dark:bg-[#18181B] rounded-[24px] p-7 shadow-[0_2px_10px_rgb(0,0,0,0.04)] border border-gray-100 dark:border-gray-800">
