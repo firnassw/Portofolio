@@ -14,8 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://wahid-firnas.netlify.app'),
   title: "Portofolio Wahid Firnas Atsal",
-  description: "Portofolio UI/UX, pengembangan web, dan analisis sistem oleh Wahid Firnas (Indonesia).",
+  description: "Portofolio UI/UX, pengembangan web, dan showcase proyek 3D interaktif.",
   openGraph: {
     title: "Portofolio Wahid Firnas",
     description: "Lihat proyek, sertifikat, dan keahlian UI/UX & web development.",
@@ -31,6 +32,12 @@ export const metadata: Metadata = {
     ],
     locale: "id_ID",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Portofolio Wahid Firnas Atsal",
+    description: "Portofolio UI/UX, pengembangan web, dan showcase proyek 3D interaktif.",
+    images: ["/profile.jpg"],
   },
 };
 
