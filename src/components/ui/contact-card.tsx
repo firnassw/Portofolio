@@ -2,6 +2,7 @@
 "use client";
 
 import React from 'react';
+import Image from 'next/image'
 import { Mail, Navigation, Code2, Lightbulb, ArrowUpRight, ArrowRight, ExternalLink } from 'lucide-react';
 
 export const ContactCard = ({
@@ -23,12 +24,19 @@ export const ContactCard = ({
         {/* Left Column: Profile Info */}
         <div className="flex-1 p-8 sm:p-10 flex flex-col items-center justify-center text-center border-b md:border-b-0 md:border-r border-gray-100 dark:border-gray-800">
           <div className="w-28 h-28 mb-5 rounded-full p-1.5 border-2 border-gray-100 dark:border-gray-800 bg-white dark:bg-[#18181B] shadow-sm relative">
-            <img 
-              src={avatarUrl} 
-              alt={`${name}'s Avatar`}
-              className="w-full h-full rounded-full object-cover"
-              onError={(e) => { (e.target as HTMLImageElement).onerror = null; (e.target as HTMLImageElement).src = `https://placehold.co/112x112/6366f1/white?text=${name.charAt(0)}`; }}
-            />
+            <Image
+                            src={avatarUrl}
+                            alt={`${name}'s Avatar`}
+                            className="w-full h-full rounded-full object-cover"
+                            width={800}
+                            height={600}
+                            loading="lazy"
+                            onError={(e) => {
+                              const target = e.target as HTMLImageElement;
+                              target.onerror = null;
+                              target.src = `https://placehold.co/112x112/6366f1/white?text=${name.charAt(0)}`;
+                            }}
+                          />
           </div>
 
           <h3 className="text-[28px] font-bold text-gray-900 dark:text-white mb-2">{name}</h3>

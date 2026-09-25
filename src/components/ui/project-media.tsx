@@ -2,6 +2,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from 'next/image'
 import { ModelViewer } from "./model-viewer";
 import { FlowButton } from "./flow-button";
 import { X } from "lucide-react";
@@ -66,11 +67,11 @@ export function ProjectMedia({ image, modelUrl, title, badge, prototypeUrl }: Pr
               className="w-full h-full cursor-zoom-in relative"
               onClick={() => setIsLightboxOpen(true)}
             >
-              <img 
+              <Image 
                 src={image} 
                 alt={`${title} Preview`}
                 className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-[1.02]"
-              />
+               width={800} height={600} loading="lazy" />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 flex items-center justify-center pointer-events-none">
                 <span className="opacity-0 group-hover:opacity-100 bg-black/60 text-white text-sm px-4 py-2 rounded-full backdrop-blur-md transition-opacity duration-300 translate-y-2 group-hover:translate-y-0">
                   Klik untuk perbesar
@@ -106,15 +107,18 @@ export function ProjectMedia({ image, modelUrl, title, badge, prototypeUrl }: Pr
             <X className="w-6 h-6" />
           </button>
           
-          <img 
-            src={image} 
-            alt={`${title} Fullscreen`}
-            className="max-w-full max-h-full object-contain cursor-zoom-out drop-shadow-2xl animate-in zoom-in-95 duration-300"
-            onClick={(e) => {
-              e.stopPropagation();
-              setIsLightboxOpen(false);
-            }}
-          />
+          <Image
+                          src={image}
+                          alt={`${title} Fullscreen`}
+                          className="max-w-full max-h-full object-contain cursor-zoom-out drop-shadow-2xl animate-in zoom-in-95 duration-300"
+                          width={800}
+                          height={600}
+                          loading="lazy"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setIsLightboxOpen(false);
+                          }}
+                        />
         </div>
       )}
     </>

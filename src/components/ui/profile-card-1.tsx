@@ -2,6 +2,7 @@
 "use client";
 
 import React, { useState } from 'react';
+import Image from 'next/image'
 import { Mail, ArrowUpRight } from 'lucide-react';
 
 export const GlassmorphismProfileCard = ({
@@ -30,9 +31,11 @@ export const GlassmorphismProfileCard = ({
         }}
       >
         <div className="w-24 h-24 mb-4 rounded-full p-1 border-2 border-gray-200 dark:border-white/20">
-          <img 
+          <Image 
             src={avatarUrl} 
             alt={`${name}'s Avatar`}
+            width={96}
+            height={96}
             className="w-full h-full rounded-full object-cover"
             onError={(e) => { (e.target as HTMLImageElement).onerror = null; (e.target as HTMLImageElement).src = `https://placehold.co/96x96/6366f1/white?text=${name.charAt(0)}`; }}
           />

@@ -2,6 +2,7 @@
 "use client";
 
 import { ArrowLeft, ArrowRight, ArrowUpRight, Landmark, CalendarDays, BadgeCheck, X } from "lucide-react";
+import Image from 'next/image'
 import { useEffect, useState } from "react";
 
 import { Button } from "@/components/ui/button";
@@ -117,11 +118,11 @@ const Gallery6 = ({
                     className="w-full aspect-[16/9] border-b border-gray-100 dark:border-gray-800 relative overflow-hidden bg-white dark:bg-white flex items-center justify-center p-4 cursor-pointer"
                     onClick={() => setSelectedImage(item.image)}
                   >
-                    <img
+                    <Image
                       src={item.image}
                       alt={item.title}
                       className="h-full w-full object-contain object-center transition duration-500 group-hover:scale-105"
-                    />
+                     width={800} height={600} loading="lazy" />
                   </div>
 
                   <div className="p-6 flex flex-col flex-grow">
@@ -192,11 +193,11 @@ const Gallery6 = ({
           </button>
           
           <div className="relative w-full h-full max-w-6xl flex items-center justify-center" onClick={(e) => e.stopPropagation()}>
-            <img 
+            <Image 
               src={selectedImage} 
               alt="Certificate Preview" 
               className="max-w-full max-h-full object-contain rounded-xl shadow-[0_0_40px_rgba(0,0,0,0.5)] border border-white/10"
-            />
+             width={800} height={600} loading="lazy" />
           </div>
         </div>
       )}

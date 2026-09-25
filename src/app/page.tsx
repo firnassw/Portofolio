@@ -906,7 +906,7 @@ export default function Home() {
 
           <li className="timeline-item" data-reveal>
             <div className="timeline-logo-wrap">
-              <img src="https://upload.wikimedia.org/wikipedia/id/a/a4/SMA_Negeri_9_Yogyakarta.png" alt="SMA N 9 Logo" />
+              <Image src="https://upload.wikimedia.org/wikipedia/id/a/a4/SMA_Negeri_9_Yogyakarta.png" alt="SMA N 9 Logo"  width={800} height={600} loading="lazy" />
             </div>
             <div className="timeline-dot"></div>
             <div className="timeline-content">
@@ -927,7 +927,7 @@ export default function Home() {
 
           <li className="timeline-item" data-reveal>
             <div className="timeline-logo-wrap">
-              <img src="https://mediascanter.id/wp-content/uploads/2026/03/pawitikra.png" alt="SMP N 5 Logo" />
+              <Image src="https://mediascanter.id/wp-content/uploads/2026/03/pawitikra.png" alt="SMP N 5 Logo"  width={800} height={600} loading="lazy" />
             </div>
             <div className="timeline-dot"></div>
             <div className="timeline-content">
@@ -965,46 +965,46 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="bg-white dark:bg-[#18181B] rounded-[24px] p-6 shadow-[0_2px_10px_rgb(0,0,0,0.04)] border border-gray-100 dark:border-gray-800 transition-all duration-300 hover:shadow-lg w-full flex flex-col items-center">
               <h3 className="text-[18px] font-bold mb-4 self-start" style={{ color: 'var(--color-on-surface)' }}>Top Languages</h3>
-              <img 
+              <Image 
                 src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=firnassw&layout=compact&theme=transparent&hide_border=true&title_color=0078D4&text_color=475569" 
                 alt="Top Languages" 
                 className="w-full max-w-[400px] object-contain light-img"
-              />
-              <img 
+               width={800} height={600} loading="lazy" />
+              <Image 
                 src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=firnassw&layout=compact&theme=transparent&hide_border=true&title_color=3B82F6&text_color=94a3b8" 
                 alt="Top Languages" 
                 className="w-full max-w-[400px] object-contain dark-img"
-              />
+               width={800} height={600} loading="lazy" />
             </div>
 
             <div className="bg-white dark:bg-[#18181B] rounded-[24px] p-6 shadow-[0_2px_10px_rgb(0,0,0,0.04)] border border-gray-100 dark:border-gray-800 transition-all duration-300 hover:shadow-lg w-full flex flex-col items-center">
               <h3 className="text-[18px] font-bold mb-4 self-start" style={{ color: 'var(--color-on-surface)' }}>GitHub Streak</h3>
-              <img 
+              <Image 
                 src="https://github-readme-streak-stats.herokuapp.com/?user=firnassw&theme=transparent&hide_border=true&title_color=0078D4&text_color=475569&icon_color=0078D4&date_format=j%20M%5B%20Y%5D" 
                 alt="GitHub Streak" 
                 className="w-full max-w-[550px] object-contain light-img"
-              />
-              <img 
+               width={800} height={600} loading="lazy" />
+              <Image 
                 src="https://github-readme-streak-stats.herokuapp.com/?user=firnassw&theme=transparent&hide_border=true&title_color=3B82F6&text_color=94a3b8&icon_color=3B82F6&date_format=j%20M%5B%20Y%5D" 
                 alt="GitHub Streak" 
                 className="w-full max-w-[550px] object-contain dark-img"
-              />
+               width={800} height={600} loading="lazy" />
             </div>
           </div>
 
           <div className="bg-white dark:bg-[#18181B] rounded-[24px] p-6 shadow-[0_2px_10px_rgb(0,0,0,0.04)] border border-gray-100 dark:border-gray-800 transition-all duration-300 hover:shadow-lg w-full flex flex-col">
             <h3 className="text-[18px] font-bold mb-4" style={{ color: 'var(--color-on-surface)' }}>Contribution Graph</h3>
             <div className="w-full overflow-x-auto text-center whitespace-nowrap pb-2">
-              <img 
+              <Image 
                 src="https://raw.githubusercontent.com/firnassw/firnassw/output/github-contribution-grid-snake.svg" 
                 alt="GitHub Contribution Snake" 
                 className="inline-block min-w-[880px] w-[880px] max-w-none h-auto light-img"
-              />
-              <img 
+               width={800} height={600} loading="lazy" />
+              <Image 
                 src="https://raw.githubusercontent.com/firnassw/firnassw/output/github-contribution-grid-snake-dark.svg" 
                 alt="GitHub Contribution Snake" 
                 className="inline-block min-w-[880px] w-[880px] max-w-none h-auto dark-img"
-              />
+               width={800} height={600} loading="lazy" />
             </div>
           </div>
         </div>
@@ -1043,7 +1043,7 @@ export default function Home() {
                     <div className="glow-border"></div>
                   </div>
                   <div className="portfolio-thumb">
-                    <img src={project.thumbnailImage || project.image} alt={`${project.title} Preview`} />
+                    <Image src={project.thumbnailImage || project.image} alt={`${project.title} Preview`}  width={800} height={600} loading="lazy" />
                   </div>
                   <div className="portfolio-body">
                     <div className={`portfolio-badge ${project.badge.includes('WEB') ? 'badge-web' : ''}`}>
