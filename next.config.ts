@@ -1,11 +1,15 @@
 import type { NextConfig } from "next";
+import bundleAnalyzer from "@next/bundle-analyzer";
+
+const withBundleAnalyzer = bundleAnalyzer({
+  enabled: process.env.ANALYZE === 'true',
+});
 
 const nextConfig: NextConfig = {
   output: 'export',
   images: {
     unoptimized: true,
   },
-
   async headers() {
     return [
       {
@@ -32,4 +36,4 @@ const nextConfig: NextConfig = {
   turbopack: { root: __dirname },
 };
 
-export default nextConfig;
+export default withBundleAnalyzer(nextConfig);
