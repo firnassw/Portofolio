@@ -197,13 +197,15 @@ const glowMenuItems = [
   }
 ];
 
-const GithubIcon = (props: unknown) => (
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+const GithubIcon = (props: any) => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
     <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.02c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A4.8 4.8 0 0 0 9 18v4"></path>
   </svg>
 );
 
-const LinkedinIcon = (props: unknown) => (
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+const LinkedinIcon = (props: any) => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
     <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
     <rect x="2" y="9" width="4" height="12"></rect>
@@ -211,7 +213,8 @@ const LinkedinIcon = (props: unknown) => (
   </svg>
 );
 
-const InstagramIcon = (props: unknown) => (
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+const InstagramIcon = (props: any) => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
     <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
     <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
@@ -524,7 +527,8 @@ export default function Home() {
     window.addEventListener('scroll', handleMoveOrScroll, { passive: true });
 
 
-    (window as unknown).openSkillsModal = function(title: string, skills: string[]) {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (window as any).openSkillsModal = function(title: string, skills: string[]) {
       const modal = document.getElementById('skillsModal');
       const titleEl = document.getElementById('skillsModalTitle');
       const listEl = document.getElementById('skillsModalList');
@@ -544,7 +548,8 @@ export default function Home() {
       }
     };
 
-    (window as unknown).closeSkillsModal = function() {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (window as any).closeSkillsModal = function() {
       const modal = document.getElementById('skillsModal');
       if (modal) {
         modal.classList.remove('active');
@@ -556,7 +561,8 @@ export default function Home() {
     const modalClickListener = (e: MouseEvent) => {
       const modal = document.getElementById('skillsModal');
       if (e.target === modal) {
-        (window as unknown).closeSkillsModal();
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        (window as any).closeSkillsModal();
       }
     };
     window.addEventListener('click', modalClickListener);
@@ -564,7 +570,8 @@ export default function Home() {
     
     const modalKeydownListener = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
-        (window as unknown).closeSkillsModal();
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        (window as any).closeSkillsModal();
       }
     };
     window.addEventListener('keydown', modalKeydownListener);
@@ -905,7 +912,8 @@ export default function Home() {
               <hr className="timeline-divider" />
               <p className="timeline-skills"><span className="material-symbols-outlined star-icon"
                   style={{ color: "#0E7D6A" }}>star</span> <strong>Skills:</strong> Analytical Skills, Information Systems,
-                <span className="skills-more-link" onClick={() => (window as unknown).openSkillsModal('Universitas Pembangunan Nasional Veteran Yogyakarta', ['Analytical Skills', 'Information Systems', 'MySQL', 'PHP', 'C++', 'SQL', 'Website Building', 'HTML', 'JavaScript', 'Databases', 'Web Development', 'Cascading Style Sheets (CSS)'])}>+10 skills</span></p>
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                <span className="skills-more-link" onClick={() => (window as any).openSkillsModal('Universitas Pembangunan Nasional Veteran Yogyakarta', ['Analytical Skills', 'Information Systems', 'MySQL', 'PHP', 'C++', 'SQL', 'Website Building', 'HTML', 'JavaScript', 'Databases', 'Web Development', 'Cascading Style Sheets (CSS)'])}>+10 skills</span></p>
             </div>
           </li>
 
@@ -926,7 +934,8 @@ export default function Home() {
               <hr className="timeline-divider" />
               <p className="timeline-skills"><span className="material-symbols-outlined star-icon"
                   style={{ color: "#3B5CD7" }}>star</span> <strong>Skills:</strong> Analytical Skills, MySQL, 
-                <span className="skills-more-link" onClick={() => (window as unknown).openSkillsModal('SMA Negeri 9 Yogyakarta', ['Analytical Skills', 'MySQL', 'PHP', 'Website Building', 'HTML', 'Web Development', 'Cascading Style Sheets (CSS)'])}>+5 skills</span></p>
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                <span className="skills-more-link" onClick={() => (window as any).openSkillsModal('SMA Negeri 9 Yogyakarta', ['Analytical Skills', 'MySQL', 'PHP', 'Website Building', 'HTML', 'Web Development', 'Cascading Style Sheets (CSS)'])}>+5 skills</span></p>
             </div>
           </li>
 
@@ -947,7 +956,8 @@ export default function Home() {
               <hr className="timeline-divider" />
               <p className="timeline-skills"><span className="material-symbols-outlined star-icon"
                   style={{ color: "#6D28D9" }}>star</span> <strong>Skills:</strong> Analytical Skills, Problem Solving, 
-                <span className="skills-more-link" onClick={() => (window as unknown).openSkillsModal('SMP Negeri 5 Yogyakarta', ['Analytical Skills', 'Problem Solving', 'Teamwork', 'Self Learning'])}>+2 skills</span></p>
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                <span className="skills-more-link" onClick={() => (window as any).openSkillsModal('SMP Negeri 5 Yogyakarta', ['Analytical Skills', 'Problem Solving', 'Teamwork', 'Self Learning'])}>+2 skills</span></p>
             </div>
           </li>
         </ol>
@@ -1177,7 +1187,8 @@ export default function Home() {
     <div className="skills-modal-container">
       <div className="skills-modal-header">
         <h3 id="skillsModalTitle">Skills</h3>
-        <button className="skills-modal-close" onClick={() => (window as unknown).closeSkillsModal()} aria-label="Close modal"><span className="material-symbols-outlined">close</span></button>
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        <button className="skills-modal-close" onClick={() => (window as any).closeSkillsModal()} aria-label="Close modal"><span className="material-symbols-outlined">close</span></button>
       </div>
       <div className="skills-modal-body">
         <ul id="skillsModalList" className="skills-list">

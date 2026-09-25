@@ -15,8 +15,10 @@ export const ContactCard = ({
 }: {
   avatarUrl: string;
   name: string;
-  socialLinks?: unknown[];
-  actionButton: unknown;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  socialLinks?: any[];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  actionButton: any;
 }) => {
   return (
     <div className="relative w-full max-w-[900px] mx-auto my-8">

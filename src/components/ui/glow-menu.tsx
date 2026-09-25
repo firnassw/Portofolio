@@ -9,7 +9,8 @@ import { cn } from "@/lib/utils"
 import { LucideIcon } from "lucide-react"
 
 interface MenuItem {
-  icon: LucideIcon | React.FC<unknown>
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  icon: LucideIcon | React.FC<any>
   label: string
   gradient: string
   iconColor: string

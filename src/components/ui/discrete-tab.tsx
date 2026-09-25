@@ -27,9 +27,11 @@ export function DiscreteTabs({
         <Button
           key={tab.id}
           title={tab.title}
-          ButtonIcon={tab.icon as unknown}
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          ButtonIcon={tab.icon as any}
           isActive={activeTab === tab.id}
-          setActiveButton={setActiveTab as unknown}
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          setActiveButton={setActiveTab as any}
         />
       ))}
     </div>
@@ -43,7 +45,8 @@ function Button({
   setActiveButton,
 }: {
   title: string;
-  ButtonIcon: React.ComponentType<unknown>;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  ButtonIcon: React.ComponentType<any>;
   isActive: boolean;
   setActiveButton: (val: string) => void;
 }) {

@@ -18,8 +18,10 @@ export const GlassmorphismProfileCard = ({
   name: string;
   title: string;
   bio: string;
-  socialLinks?: unknown[];
-  actionButton: unknown;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  socialLinks?: any[];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  actionButton: any;
 }) => {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
@@ -62,7 +64,8 @@ export const GlassmorphismProfileCard = ({
   );
 };
 
-const SocialButton = ({ item, setHoveredItem, hoveredItem }: unknown) => (
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+const SocialButton = ({ item, setHoveredItem, hoveredItem }: any) => (
   <div className="relative">
     <a
       href={item.href}
@@ -81,7 +84,8 @@ const SocialButton = ({ item, setHoveredItem, hoveredItem }: unknown) => (
   </div>
 );
 
-const ActionButton = ({ action }: unknown) => (
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+const ActionButton = ({ action }: any) => (
   <a
     href={action.href}
     target={action.target || "_blank"}
@@ -98,7 +102,8 @@ const ActionButton = ({ action }: unknown) => (
   </a>
 );
 
-const Tooltip = ({ item, hoveredItem }: unknown) => (
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+const Tooltip = ({ item, hoveredItem }: any) => (
   <div 
     role="tooltip"
     className={`absolute -top-12 left-1/2 -translate-x-1/2 z-50 px-3 py-1.5 rounded-lg backdrop-blur-md border text-xs font-medium whitespace-nowrap transition-all duration-300 ease-out pointer-events-none bg-gray-900 text-white dark:bg-gray-100 dark:text-gray-900 border-gray-800 dark:border-gray-200 ${hoveredItem === item.id ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}

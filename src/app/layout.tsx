@@ -41,9 +41,6 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Portofolio Wahid Firnas Atsal | UI/UX Designer & Frontend Developer",
-  alternates: {
-    canonical: "/",
-  },
     description: "Portofolio profesional Wahid Firnas Atsal, menampilkan keahlian dan proyek-proyek inovatif di bidang desain UI/UX, pengembangan web (frontend), analisis sistem, serta implementasi 3D interaktif.",
     images: ["/profile.jpg"],
   },

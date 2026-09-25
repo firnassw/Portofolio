@@ -8,7 +8,8 @@ import React, { useState } from "react"
 import { cn } from "@/lib/utils"
 
 interface SocialIcon {
-  Icon: React.ElementType<unknown>
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  Icon: React.ElementType<any>
   href?: string
   className?: string
 }
