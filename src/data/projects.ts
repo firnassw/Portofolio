@@ -116,7 +116,7 @@ export const projectsItems: ProjectDetail[] = [
     description: "QuietTap menghadirkan cara yang praktis dan minimalis untuk berpindah slide presentasi tanpa remote. Cukup ketuk meja dua kali, sensor akan membaca getaran dan mengirim sinyal ke laptop.",
     url: "#",
     image: "/projek/quiettab.jpg",
-    modelUrl: "/quiettab.glb",
+    modelUrl: "/kompresi/quiettab-draco.glb",
     thumbnailImage: "/projek/quiettab.jpg",
     about: "QuietTap bekerja dengan cara sensor vibrasi di dalam casing mendeteksi pola getaran saat pengguna mengetuk dua kali (double tap) pada permukaan meja. Data getaran tersebut kemudian diproses oleh chip ESP32 untuk memastikan pola itu valid. Setelah itu, ESP32 akan mengirim sinyal via Bluetooth ke laptop yang sudah terhubung sehingga perintah seperti mengganti slide presentasi langsung dieksekusi. Semuanya berlangsung dalam hitungan milidetik dan didukung oleh daya dari USB-C atau baterai internal 500mAh untuk penggunaan nirkabel penuh.",
     featuresTitle: "Manfaat QuietTap",

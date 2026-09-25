@@ -46,6 +46,7 @@ export function ModelViewer({ src, alt, className = "" }: ModelViewerProps) {
         environment-image="neutral"
         camera-orbit="0deg 75deg 105%"
         interaction-prompt="none"
+        loading="lazy"
         style={{ width: '100%', height: '100%', outline: 'none', cursor: 'grab' }}
       />
       
