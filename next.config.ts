@@ -6,30 +6,42 @@ const withBundleAnalyzer = bundleAnalyzer({
 });
 
 const nextConfig: NextConfig = {
-  output: 'export',
-  images: {
-    unoptimized: true,
-  },
   async headers() {
+    const cspHeader = `
+      default-src 'self';
+      script-src 'self' 'unsafe-eval' 'unsafe-inline' https://vercel.live;
+      style-src 'self' 'unsafe-inline';
+      img-src 'self' blob: data: https:;
+      font-src 'self' data:;
+      object-src 'none';
+      base-uri 'self';
+      form-action 'self';
+      frame-ancestors 'none';
+      upgrade-insecure-requests;
+    `.replace(/\s{2,}/g, ' ').trim();
+
     return [
       {
-        source: '/kompresi/:path*',
+        source: '/(.*)',
         headers: [
           {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
+            key: 'Content-Security-Policy',
+            value: cspHeader,
+          },
+          {
+            key: 'X-Frame-Options',
+            value: 'DENY',
+          },
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff',
+          },
+          {
+            key: 'Referrer-Policy',
+            value: 'strict-origin-when-cross-origin',
           },
         ],
       },
-      {
-        source: '/projek/:path*',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
-        ],
-      }
     ];
   },
   // Menginformasikan Turbopack lokasi root proyek
