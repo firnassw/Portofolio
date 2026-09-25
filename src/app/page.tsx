@@ -1213,6 +1213,22 @@ export default function Home() {
 
   
 
+    
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Wahid Firnas Portfolio",
+            "url": "https://wahid-firnas.netlify.app",
+            "author": {
+              "@type": "Person",
+              "name": "Wahid Firnas Atsal"
+            }
+          })
+        }}
+      />
     </>
   );
 }
