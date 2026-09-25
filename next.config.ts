@@ -7,15 +7,15 @@ const withBundleAnalyzer = bundleAnalyzer({
 
 const nextConfig: NextConfig = {
   images: {
+    dangerouslyAllowSVG: true,
+    contentDispositionType: 'attachment',
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'upload.wikimedia.org',
-      },
-      {
-        protocol: 'https',
-        hostname: 'mediascanter.id',
-      },
+      { protocol: 'https', hostname: 'upload.wikimedia.org' },
+      { protocol: 'https', hostname: 'mediascanter.id' },
+      { protocol: 'https', hostname: 'github-readme-stats-eight-theta.vercel.app' },
+      { protocol: 'https', hostname: 'github-readme-streak-stats.herokuapp.com' },
+      { protocol: 'https', hostname: 'raw.githubusercontent.com' },
     ],
   },
   async headers() {
