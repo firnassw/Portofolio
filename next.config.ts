@@ -21,8 +21,10 @@ const nextConfig: NextConfig = {
   async headers() {
     const cspHeader = `
       default-src 'self';
-      script-src 'self' 'unsafe-eval' 'unsafe-inline' https://vercel.live;
+      connect-src 'self' https://www.gstatic.com;
+      script-src 'self' 'unsafe-eval' 'unsafe-inline' https://vercel.live https://www.gstatic.com blob:;
       style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+      worker-src 'self' blob:;
       img-src 'self' blob: data: https:;
       font-src 'self' data: https://fonts.gstatic.com;
       object-src 'none';

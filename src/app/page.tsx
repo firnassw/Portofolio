@@ -912,7 +912,7 @@ export default function Home() {
               <hr className="timeline-divider" />
               <p className="timeline-skills"><span className="material-symbols-outlined star-icon"
                   style={{ color: "#0E7D6A" }}>star</span> <strong>Skills:</strong> Analytical Skills, Information Systems,
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
                 <span className="skills-more-link" onClick={() => (window as any).openSkillsModal('Universitas Pembangunan Nasional Veteran Yogyakarta', ['Analytical Skills', 'Information Systems', 'MySQL', 'PHP', 'C++', 'SQL', 'Website Building', 'HTML', 'JavaScript', 'Databases', 'Web Development', 'Cascading Style Sheets (CSS)'])}>+10 skills</span></p>
             </div>
           </li>
@@ -934,7 +934,7 @@ export default function Home() {
               <hr className="timeline-divider" />
               <p className="timeline-skills"><span className="material-symbols-outlined star-icon"
                   style={{ color: "#3B5CD7" }}>star</span> <strong>Skills:</strong> Analytical Skills, MySQL, 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
                 <span className="skills-more-link" onClick={() => (window as any).openSkillsModal('SMA Negeri 9 Yogyakarta', ['Analytical Skills', 'MySQL', 'PHP', 'Website Building', 'HTML', 'Web Development', 'Cascading Style Sheets (CSS)'])}>+5 skills</span></p>
             </div>
           </li>
@@ -956,7 +956,7 @@ export default function Home() {
               <hr className="timeline-divider" />
               <p className="timeline-skills"><span className="material-symbols-outlined star-icon"
                   style={{ color: "#6D28D9" }}>star</span> <strong>Skills:</strong> Analytical Skills, Problem Solving, 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
                 <span className="skills-more-link" onClick={() => (window as any).openSkillsModal('SMP Negeri 5 Yogyakarta', ['Analytical Skills', 'Problem Solving', 'Teamwork', 'Self Learning'])}>+2 skills</span></p>
             </div>
           </li>
@@ -1187,7 +1187,7 @@ export default function Home() {
     <div className="skills-modal-container">
       <div className="skills-modal-header">
         <h3 id="skillsModalTitle">Skills</h3>
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
         <button className="skills-modal-close" onClick={() => (window as any).closeSkillsModal()} aria-label="Close modal"><span className="material-symbols-outlined">close</span></button>
       </div>
       <div className="skills-modal-body">
