@@ -12,6 +12,36 @@ export async function generateStaticParams() {
     id: project.id,
   }));
 }
+
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }) {
+  const resolvedParams = await params;
+  const project = projectsItems.find((p) => p.id === resolvedParams.id);
+  
+  if (!project) {
+    return { title: 'Project Not Found' };
+  }
+  
+  const title = `${project.title} - Portofolio Wahid Firnas`;
+  const description = project.summary;
+  const image = project.thumbnailImage || project.image || '/profile.jpg';
+  
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      images: [image],
+      type: 'article',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [image],
+    },
+  };
+}
 export default async function ProjectDetail({ params }: { params: Promise<{ id: string }> }) {
   const resolvedParams = await params;
   const project = projectsItems.find((p) => p.id === resolvedParams.id);
@@ -20,8 +50,25 @@ export default async function ProjectDetail({ params }: { params: Promise<{ id: 
     notFound();
   }
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "name": project.title,
+    "description": project.summary,
+    "image": project.thumbnailImage || project.image || '/profile.jpg',
+    "url": `https://wahid-firnas.netlify.app/project/${project.id}`,
+    "author": {
+      "@type": "Person",
+      "name": "Wahid Firnas"
+    }
+  };
+
   return (
     <div className="min-h-screen bg-[var(--color-background)] text-[var(--color-on-surface)] pb-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="w-full max-w-[1200px] mx-auto px-6 md:px-8" style={{ marginTop: '-30px', paddingTop: 0 }}>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           <div className="lg:col-span-5 flex flex-col pt-0">
