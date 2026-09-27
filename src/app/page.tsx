@@ -670,8 +670,8 @@ export default function Home() {
           <span className="blur-text-char">S</span>
         </div>
 
-        <div className="hero-floating-avatar">
-          <Image src="/logo/foto kecil.png" alt="Profile" width={120} height={120} loading="lazy" />
+        <div className="hero-floating-avatar bg-white">
+          <Image src="/logo/foto kecil.png" alt="Profile" width={400} height={400} quality={100} priority />
         </div>
       </div>
 
