@@ -70,7 +70,7 @@ export function ProjectMedia({ image, modelUrl, title, badge, prototypeUrl }: Pr
               <Image 
                 src={image} 
                 alt={`${title} Preview`}
-                className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+                className="w-full h-full object-cover object-top scale-[1.06] transition-transform duration-500 group-hover:scale-[1.09]"
                width={800} height={600} loading="lazy" />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 flex items-center justify-center pointer-events-none">
                 <span className="opacity-0 group-hover:opacity-100 bg-black/60 text-white text-sm px-4 py-2 rounded-full backdrop-blur-md transition-opacity duration-300 translate-y-2 group-hover:translate-y-0">

@@ -6,7 +6,7 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Gallery6 } from "@/components/blocks/gallery6";
-import DiscreteTabs from "@/components/ui/discrete-tab";
+import MagneticTabs from "@/components/ui/magnetic-tabs";
 import { ContactCard } from "@/components/ui/contact-card";
 import { AnimatedSocialIcons } from "@/components/ui/floating-action-button";
 import { Code, Award, Trophy, Mail } from "lucide-react";
@@ -1042,15 +1042,21 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="tab-nav-container w-full max-w-full flex justify-center mb-8 px-2" data-reveal>
-          <DiscreteTabs
-            activeTab={activeTab}
-            setActiveTab={setActiveTab}
-          />
-        </div>
+        <div className="tab-nav-container w-full max-w-full mb-8 px-2" data-reveal>
+          <MagneticTabs
+            defaultValue="Projects"
+            items={[
+              {
+                value: "Projects",
+                label: (
+                  <div className="flex items-center gap-2">
+                    <Code size={18} />
+                    Projects
+                  </div>
+                ),
+                content: (
+                  <div className="projects-grid">
 
-        <div className={`tab-content ${activeTab === "Projects" ? "active" : ""}`} id="tab-projects">
-          <div className="projects-grid">
             {projectsItems.map((project) => (
               <Link href={`/project/${project.id}`} key={project.id} className="block group">
                 <article className="portfolio-card glow-wrapper h-full transition-transform duration-300 hover:-translate-y-2">
@@ -1082,15 +1088,35 @@ export default function Home() {
                 </article>
               </Link>
             ))}
-          </div>
-        </div>
-
-        <div className={`tab-content ${activeTab === "Certificates" ? "active" : ""}`} id="tab-certificates">
-          <Gallery6 heading="Certifications" items={certsItems} />
-        </div>
-
-        <div className={`tab-content ${activeTab === "Lomba" ? "active" : ""}`} id="tab-lomba">
-          <Gallery6 heading="Competitions" items={lombaItems} />
+                            </div>
+                )
+              },
+              {
+                value: "Certificates",
+                label: (
+                  <div className="flex items-center gap-2">
+                    <Award size={18} />
+                    Certificates
+                  </div>
+                ),
+                content: (
+                  <Gallery6 heading="Certifications" items={certsItems} />
+                )
+              },
+              {
+                value: "Lomba",
+                label: (
+                  <div className="flex items-center gap-2">
+                    <Trophy size={18} />
+                    Lomba
+                  </div>
+                ),
+                content: (
+                  <Gallery6 heading="Competitions" items={lombaItems} />
+                )
+              }
+            ]}
+          />
         </div>
       </div>
     </section>

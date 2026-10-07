@@ -131,5 +131,33 @@ export const projectsItems: ProjectDetail[] = [
     techStack: ["ESP32", "Fusion 360", "KiCad", "Bluetooth LE", "Piezo Sensor", "3D Printing", "Li-Po Battery"],
     challenge: "Presenter sering kesulitan mengontrol slide tanpa harus memegang remote atau terus-menerus menyentuh laptop, sehingga gerak mereka menjadi terbatas dan kontak visual dengan audiens pun terganggu. Terdapat kebutuhan akan cara yang lebih praktis dan minimalis untuk berpindah slide.",
     solution: "Menghadirkan kontrol hands-free melalui sensor vibrasi dan Bluetooth: cukup dengan mengetuk meja dua kali, sinyal langsung terkirim ke laptop untuk menjalankan perintah seperti mengganti slide. Dengan begitu, presenter bisa tetap bergerak bebas dan fokus menjaga interaksi dengan audiens tanpa perlu memegang alat tambahan."
+  },
+  {
+    id: "proj-scc",
+    badge: "WEB PROJECT",
+    title: "Student Command Center",
+    summary: "Platform manajemen akademik komprehensif untuk membantu mahasiswa mengorganisir tugas, jadwal, dan materi.",
+    description: "Platform manajemen akademik komprehensif yang dirancang untuk membantu mahasiswa mengorganisir tugas, jadwal perkuliahan, dan materi belajar dalam satu dasbor terpusat. Platform ini bertujuan untuk meningkatkan produktivitas, mengurangi stres akademik, dan memastikan mahasiswa tidak melewatkan tenggat waktu (deadline) penting.",
+    url: "#",
+    image: "/projek/scc-banner.png",
+    thumbnailImage: "/projek/scc-cover.png",
+    metadata: {
+      period: "Agustus - Oktober 2026",
+      role: "Fullstack Developer",
+      tools: "React, Supabase",
+      status: "IMVP"
+    },
+    about: "Student Command Center adalah platform manajemen akademik komprehensif yang dirancang untuk membantu mahasiswa mengorganisir tugas, jadwal perkuliahan, dan materi belajar dalam satu dasbor terpusat. Platform ini bertujuan untuk meningkatkan produktivitas, mengurangi stres akademik, dan memastikan mahasiswa tidak melewatkan tenggat waktu (deadline) penting.",
+    features: [
+      "Dasbor Manajemen Akademik Terpusat",
+      "Sistem Pelacakan Tugas (Task Tracking & Management)",
+      "Manajemen Jadwal & Mata Kuliah (Course Management)",
+      "Penyimpanan & Pengarsipan Materi Belajar (Material Management)",
+      "Pengingat Tenggat Waktu (Deadline) yang Intuitif"
+    ],
+    techStack: ["React.js", "TypeScript", "Tailwind CSS", "Supabase (BaaS)", "Vite", "Push Notifications (web-push)", "Browser Automation (Puppeteer)"],
+    challenge: "Mahasiswa seringkali kewalahan dalam mengatur jadwal kuliah, tugas dari berbagai mata kuliah, dan materi yang berserakan di berbagai platform atau grup chat. Hal ini membuat mereka rentan kehilangan fokus, melewatkan deadline, dan kesulitan memprioritaskan pekerjaan akademik mereka.",
+    solution: "Membangun sebuah aplikasi web (Command Center) yang mengintegrasikan manajemen tugas, jadwal mata kuliah, dan materi pembelajaran dalam satu antarmuka yang bersih dan mudah digunakan. Dengan sistem ini, mahasiswa dapat merencanakan studi mereka dengan lebih terstruktur, melacak progres belajar, dan menjadi lebih produktif.",
+    prototypeUrl: "https://student-commad-center.netlify.app/"
   }
 ];

@@ -147,7 +147,7 @@ export default async function ProjectDetail({ params }: { params: Promise<{ id: 
               <div className="flex flex-col gap-5 sm:row-span-2 h-full">
                 <div className="bg-white dark:bg-[#18181B] rounded-[24px] p-7 shadow-[0_2px_10px_rgb(0,0,0,0.04)] border border-gray-100 dark:border-gray-800 flex-1 flex flex-col justify-start">
                   <h3 className="text-[16px] font-bold" style={{ color: 'var(--color-on-surface)', marginBottom: '24px' }}>Tech Stack</h3>
-                  <div className="flex flex-wrap gap-3.5 my-auto">
+                  <div className="flex flex-wrap gap-2.5 content-start">
                     {project.techStack.map((tech, i) => (
                       <span 
                         key={i} 
