@@ -103,7 +103,7 @@ export default function MagneticTabs({
           {items.map((item, i) => (
             <TabsTrigger
               key={item.value}
-              ref={(el) => (tabRefs.current[i] = el)}
+              ref={(el) => { tabRefs.current[i] = el; }}
               value={item.value}
               asChild
               onMouseEnter={() => setHovered(item.value)}
