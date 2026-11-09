@@ -1,9 +1,9 @@
 <div align="center">
 
-  # 🌐 Wahid Firnas Atsal — Personal Portfolio
+  # Wahid Firnas Atsal — Personal Portfolio
 
   <p align="center">
-    <strong>A high-performance, modern, and interactive portfolio crafted with Next.js 16, React 19, Tailwind CSS, and 3D Model Web Experiences.</strong>
+    <strong>A high-performance, modern, and interactive portfolio crafted with Next.js 16, React 19, Tailwind CSS, and 3D web experiences.</strong>
   </p>
 
   <p align="center">
@@ -24,33 +24,33 @@
 
   ---
 
-  [Explore Live Demo](https://wahid-firnas.netlify.app) • [View Projects](#-featured-projects) • [Tech Stack](#%EF%B8%8F-tech-stack) • [Getting Started](#-getting-started) • [Contact](#-connect--contact)
+  [Live Demo](https://wahid-firnas.netlify.app) • [Projects](#featured-projects) • [Tech Stack](#tech-stack) • [Getting Started](#getting-started) • [Contact](#contact)
 
 </div>
 
 <br />
 
-## 📖 Overview
+## Overview
 
 This repository hosts the source code for the personal portfolio of **Wahid Firnas Atsal** — an Information Systems student, UI/UX Designer, and Frontend Developer passionate about bridging the gap between intuitive user experiences and performant code.
 
-Designed with a strong focus on aesthetics, smooth micro-interactions, responsive design, and cutting-edge web technologies including **Next.js 16 (App Router + Turbopack)**, **Tailwind CSS v4**, and **Interactive 3D Hardware Visualizations**.
+Designed with a strong focus on aesthetics, smooth micro-interactions, responsive design, and modern web technologies including **Next.js 16 (App Router + Turbopack)**, **Tailwind CSS v4**, and **Interactive 3D Hardware Visualizations**.
 
 ---
 
-## ✨ Key Features & Highlights
+## Key Features
 
-- ⚡ **Cutting-Edge Architecture**: Powered by Next.js 16 (App Router) and React 19 for instantaneous page loads and optimal SEO.
-- 🎨 **Fluid Micro-Interactions**: Smooth animations, layout shifts, magnetic tabs, and interactive hover cards powered by **Framer Motion**.
-- 🧊 **Interactive 3D Hardware Showcase**: Integrated Google `@google/model-viewer` with Draco 3D compression, allowing visitors to inspect hardware prototypes directly in the browser.
-- 📱 **Mobile-First & Fully Responsive**: Seamless, adaptive layout tailored for smartphones, tablets, and ultra-wide desktop monitors.
-- 🌓 **Dynamic Theme Switching**: Smooth light & dark mode transition with persistent state handling.
-- 📊 **Dynamic GitHub Stats**: Live integration of GitHub streak counters, top languages breakdown, and contribution snake visualization.
-- 🔍 **SEO & Accessibility Ready**: Complete JSON-LD Schema markup, canonical metadata, OpenGraph cards, sitemap, and semantic HTML structure.
+- **Modern Architecture**: Powered by Next.js 16 (App Router) and React 19 for instantaneous page loads and optimal SEO.
+- **Fluid Micro-Interactions**: Smooth animations, layout shifts, magnetic tabs, and interactive hover cards powered by **Framer Motion**.
+- **Interactive 3D Hardware Showcase**: Integrated Google `@google/model-viewer` with Draco 3D compression, allowing visitors to inspect hardware prototypes directly in the browser.
+- **Mobile-First & Responsive**: Layout tailored for smartphones, tablets, and desktop displays.
+- **Dynamic Theme Switching**: Light and dark mode support with persistent state handling.
+- **GitHub Stats Integration**: Live integration of GitHub streak counters, top languages breakdown, and contribution visualization.
+- **SEO & Accessibility Ready**: Complete JSON-LD Schema markup, canonical metadata, OpenGraph cards, dynamic sitemap, and semantic HTML structure.
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Core Framework & Languages
 - **Framework**: [Next.js 16](https://nextjs.org/) (App Router & Turbopack)
@@ -73,7 +73,7 @@ Designed with a strong focus on aesthetics, smooth micro-interactions, responsiv
 
 ---
 
-## 📂 Project Architecture
+## Project Structure
 
 ```plaintext
 Portofolio/
@@ -101,7 +101,7 @@ Portofolio/
 
 ---
 
-## 🚀 Featured Projects
+## Featured Projects
 
 | Project | Role / Type | Description | Preview |
 |---|---|---|---|
@@ -113,12 +113,12 @@ Portofolio/
 
 ---
 
-## 💻 Getting Started
+## Getting Started
 
 ### Prerequisites
 
 Ensure you have the following installed on your machine:
-- [Node.js](https://nodejs.org/) (version `v18.18.0` or higher recommended)
+- [Node.js](https://nodejs.org/) (`v18.18.0` or higher recommended)
 - [npm](https://www.npmjs.com/) or [pnpm](https://pnpm.io/)
 
 ### 1. Clone the Repository
@@ -151,7 +151,7 @@ npm run start
 
 ---
 
-## ⚡ Available Scripts
+## Available Scripts
 
 | Command | Description |
 |---|---|
@@ -163,7 +163,7 @@ npm run start
 
 ---
 
-## 📬 Connect & Contact
+## Contact
 
 Feel free to reach out for collaborations, project inquiries, or networking:
 
@@ -177,7 +177,7 @@ Feel free to reach out for collaborations, project inquiries, or networking:
 
 <div align="center">
 
-  Designed & Built with ❤️ by **Wahid Firnas Atsal**  
+  Designed and built by **Wahid Firnas Atsal**  
   © 2026 All rights reserved. Distributed under the [MIT License](LICENSE).
 
 </div>
